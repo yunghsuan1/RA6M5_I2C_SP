@@ -115,3 +115,527 @@
 [23656:18668:0521/142034.678:VERBOSE1:media_stream_manager.cc(1533)] MSPL::OnSpeedLimitChange({this=00006304022B2B40}, {new_limit=67})
 [23656:18668:0521/142035.692:VERBOSE1:media_stream_manager.cc(1533)] MSPL::OnSpeedLimitChange({this=00006304022B2B40}, {new_limit=68})
 [23656:18668:0521/142037.698:VERBOSE1:media_stream_manager.cc(1533)] MSPL::OnSpeedLimitChange({this=00006304022B2B40}, {new_limit=63})
+[23656:18668:0521/142040.744:VERBOSE1:media_stream_manager.cc(1533)] MSPL::OnSpeedLimitChange({this=00006304022B2B40}, {new_limit=58})
+[23656:18668:0521/142042.759:VERBOSE1:media_stream_manager.cc(1533)] MSPL::OnSpeedLimitChange({this=00006304022B2B40}, {new_limit=60})
+[23656:18668:0521/142043.770:VERBOSE1:media_stream_manager.cc(1533)] MSPL::OnSpeedLimitChange({this=00006304022B2B40}, {new_limit=100})
+[37952:26964:0521/142233.887:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/142233.892:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/142233.892:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/142233.901:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/142233.901:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/142233.901:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[23656:18668:0521/142333.462:VERBOSE1:media_stream_manager.cc(1533)] MSPL::OnSpeedLimitChange({this=00006304022B2B40}, {new_limit=68})
+[23656:18668:0521/142334.476:VERBOSE1:media_stream_manager.cc(1533)] MSPL::OnSpeedLimitChange({this=00006304022B2B40}, {new_limit=100})
+[37952:26964:0521/142505.311:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/142505.315:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/142505.316:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/142505.327:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/142505.327:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/142505.327:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/142753.533:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/142753.538:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/142753.538:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/142753.550:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/142753.550:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/142753.550:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/143039.001:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/143039.005:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/143039.005:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/143039.021:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/143039.021:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/143039.021:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/143331.154:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/143331.165:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/143331.167:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/143331.167:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/143331.175:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/143331.175:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/143331.175:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/143603.496:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/143603.502:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/143603.503:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/143603.514:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/143603.514:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/143603.514:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/143845.704:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/143845.709:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/143845.709:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/143845.717:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/143845.717:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/143845.717:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/144137.828:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/144137.832:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/144137.832:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/144137.844:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/144137.844:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/144137.844:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/144433.729:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/144433.734:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/144433.734:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/144433.744:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/144433.744:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/144433.744:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/144715.378:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/144715.385:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/144715.386:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/144715.408:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/144715.408:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/144715.408:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/145008.512:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/145008.517:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/145008.518:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/145008.527:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/145008.527:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/145008.527:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/145306.316:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/145306.320:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/145306.321:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/145306.341:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/145306.341:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/145306.341:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/145556.642:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/145556.647:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/145556.648:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/145556.674:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/145556.674:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/145556.674:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/145844.221:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/145844.225:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/145844.225:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/145844.236:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/145844.237:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/145844.237:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/150133.862:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/150133.867:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/150133.868:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/150133.877:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/150133.877:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/150133.877:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/150431.250:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/150431.255:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/150431.257:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/150431.257:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/150431.267:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/150431.267:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/150431.267:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/150730.159:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/150730.163:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/150730.164:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/150730.174:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/150730.174:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/150730.174:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/151006.535:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/151006.550:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/151006.550:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/151006.559:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/151006.559:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/151006.559:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/151244.160:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/151244.164:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/151244.165:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/151244.180:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/151244.180:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/151244.180:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/151531.543:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/151531.548:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/151531.548:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/151531.558:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/151531.558:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/151531.558:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/151811.341:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/151811.346:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/151811.346:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/151811.357:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/151811.357:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/151811.357:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/152042.589:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/152042.591:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/152042.593:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/152042.609:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/152042.609:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/152042.609:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/152322.924:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/152322.930:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/152322.930:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/152322.950:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/152322.950:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/152322.950:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/152610.450:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/152610.454:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/152610.455:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/152610.463:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/152610.463:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/152610.463:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/152855.700:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/152855.708:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/152855.708:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/152855.723:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/152855.723:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/152855.723:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/153133.840:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/153133.845:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/153133.846:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/153133.855:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/153133.855:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/153133.855:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/153415.390:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/153415.395:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/153415.395:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/153415.404:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/153415.404:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/153415.405:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/153651.389:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/153651.399:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/153651.400:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/153651.401:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/153651.411:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/153651.411:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/153651.411:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/153949.919:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/153949.919:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/153949.920:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/153949.930:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/153949.930:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/153949.930:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/154237.912:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/154237.915:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/154237.916:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/154237.928:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/154237.928:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/154237.928:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/154536.083:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/154536.088:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/154536.088:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/154536.100:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/154536.100:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/154536.100:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/154817.890:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/154817.895:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/154817.895:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/154817.903:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/154817.904:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/154817.904:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/155056.110:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/155056.127:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/155056.127:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/155056.146:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/155056.147:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/155056.147:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/155334.841:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/155334.844:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/155334.845:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/155334.854:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/155334.855:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/155334.855:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/155609.902:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/155609.906:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/155609.906:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/155609.915:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/155609.915:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/155609.915:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/155904.207:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/155904.220:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/155904.221:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/155904.232:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/155904.232:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/155904.232:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/160147.346:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/160147.351:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/160147.351:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/160147.361:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/160147.361:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/160147.361:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/160429.802:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/160429.806:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/160429.807:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/160429.815:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/160429.816:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/160429.816:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/160720.700:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/160720.704:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/160720.706:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/160720.706:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/160720.718:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/160720.718:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/160720.718:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/161018.668:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/161018.673:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/161018.674:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/161018.681:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/161018.681:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/161018.681:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/161318.152:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/161318.155:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/161318.156:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/161318.164:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/161318.164:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/161318.164:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/161603.169:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/161603.173:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/161603.174:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/161603.184:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/161603.184:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/161603.185:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/161849.182:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/161849.185:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/161849.186:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/161849.195:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/161849.195:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/161849.195:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/162123.022:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/162123.027:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/162123.027:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/162123.046:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/162123.046:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/162123.046:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/162340.418:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://update.googleapis.com/service/update2/json?cup2key=14:zUDsIrSZB1QMCcBgMr3Nq2S9TkHoWwiowZ61RB4eJJ0&cup2hreq=21630f596c765a13a1187ae7d4af1055fb3f1a492dc34aad28b5d65eb55a1122
+[37952:26964:0521/162340.422:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/162340.424:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/162340.424:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/162340.433:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/162340.433:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/162340.433:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[23656:34740:0521/162340.600:VERBOSE1:request_sender.cc(183)] Request completed from url: https://update.googleapis.com/service/update2/json?cup2key=14:zUDsIrSZB1QMCcBgMr3Nq2S9TkHoWwiowZ61RB4eJJ0&cup2hreq=21630f596c765a13a1187ae7d4af1055fb3f1a492dc34aad28b5d65eb55a1122
+[23656:25992:0521/162344.800:VERBOSE1:background_downloader_win.cc(478)] Starting BITS download for: http://edgedl.me.gvt1.com/edgedl/diffgen-puffin/lmelglejhemejginpboagddgdfbepgmp/095d9a17919c4420fe01013c71dd97e9f34f75616b9379cc432aa611dc0aa0a8
+[23656:10508:0521/162352.923:VERBOSE1:unpacker.cc(66)] Verifying component: C:\Users\USE\Desktop\SEAN_CODE\RA6M5_I2C_SP\.metadata\.plugins\com.equo.chromium\cefcache\component_crx_cache\temp_1.f33a771a2c2ce09fdf260edca5031116f337d548dc6247b3ca28ef3e49479578
+[23656:10508:0521/162352.944:VERBOSE1:unpacker.cc(95)] Unpacking in: C:\Users\USE\AppData\Local\Temp\chrome_Unpacker_BeginUnzipping23656_1250971500
+[23656:37328:0521/162352.984:VERBOSE1:component_installer.cc(146)] Install: version=676 current version=675
+[23656:37328:0521/162352.984:VERBOSE1:component_installer.cc(165)] unpack_path=C:\Users\USE\AppData\Local\Temp\chrome_Unpacker_BeginUnzipping23656_1250971500 install_path=C:\Users\USE\Desktop\SEAN_CODE\RA6M5_I2C_SP\.metadata\.plugins\com.equo.chromium\cefcache\OptimizationHints\676
+[23656:34740:0521/162352.986:VERBOSE1:component_installer.cc(572)] Component ready, version 676 in C:\Users\USE\Desktop\SEAN_CODE\RA6M5_I2C_SP\.metadata\.plugins\com.equo.chromium\cefcache\OptimizationHints\676
+[37952:26964:0521/162352.987:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://update.googleapis.com/service/update2/json
+[23656:34740:0521/162353.129:VERBOSE1:request_sender.cc(183)] Request completed from url: https://update.googleapis.com/service/update2/json
+[23656:25992:0521/162353.138:VERBOSE1:background_downloader_win.cc(478)] Starting BITS download for: http://edgedl.me.gvt1.com/edgedl/diffgen-puffin/hfnkpimlhhgieaddgfemjhofmfblmnib/7e8c6f81c17b93be675ac3631c159a9e2a751ee222a87ed10f6bc4207607a55f
+[37952:26964:0521/162354.730:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/162354.734:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/162354.735:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/162354.746:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/162354.746:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/162354.746:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[23656:37328:0521/162357.196:VERBOSE1:unpacker.cc(66)] Verifying component: C:\Users\USE\Desktop\SEAN_CODE\RA6M5_I2C_SP\.metadata\.plugins\com.equo.chromium\cefcache\component_crx_cache\temp_1.c6ae3bf995c57fbb595c530845d1769271e2db5dc837e2ddfed3a55202d0618b
+[23656:37328:0521/162357.215:VERBOSE1:unpacker.cc(95)] Unpacking in: C:\Users\USE\AppData\Local\Temp\chrome_Unpacker_BeginUnzipping23656_1290516128
+[23656:37328:0521/162357.257:VERBOSE1:component_installer.cc(146)] Install: version=10538 current version=10537
+[23656:37328:0521/162357.258:VERBOSE1:component_installer.cc(165)] unpack_path=C:\Users\USE\AppData\Local\Temp\chrome_Unpacker_BeginUnzipping23656_1290516128 install_path=C:\Users\USE\Desktop\SEAN_CODE\RA6M5_I2C_SP\.metadata\.plugins\com.equo.chromium\cefcache\CertificateRevocation\10538
+[23656:34740:0521/162357.260:VERBOSE1:component_installer.cc(572)] Component ready, version 10538 in C:\Users\USE\Desktop\SEAN_CODE\RA6M5_I2C_SP\.metadata\.plugins\com.equo.chromium\cefcache\CertificateRevocation\10538
+[37952:26964:0521/162357.261:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://update.googleapis.com/service/update2/json
+[23656:34740:0521/162357.398:VERBOSE1:request_sender.cc(183)] Request completed from url: https://update.googleapis.com/service/update2/json
+[23656:34740:0521/162357.398:VERBOSE1:component_updater_service.cc(472)] Update completed with error 0
+[37952:26964:0521/162641.448:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/162641.456:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/162641.457:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/162641.457:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/162641.465:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/162641.465:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/162641.465:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/162918.428:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/162918.434:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/162918.435:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/162918.444:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/162918.444:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/162918.444:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/163151.350:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/163151.354:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/163151.355:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/163151.363:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/163151.364:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/163151.364:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[23656:34740:0521/163301.903:VERBOSE1:profile_manager.cc(1325)] AddKeepAlive(Default, kExtensionUpdater). keep_alives=[kWaitingForFirstBrowserWindow (1), kAppWindow (1), kExtensionUpdater (1)]
+[37952:26964:0521/163301.903:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://update.googleapis.com/service/update2/json?cup2key=14:7lhbtYtdDfkPnfx3D_gXn9MMXK_n5-9v26YbDPkmTcE&cup2hreq=6f24a2df4a7235b1dadcf5be9d7d95d2e0784d733f9f2a15832a8cd473906b02
+[23656:34740:0521/163302.058:VERBOSE1:request_sender.cc(183)] Request completed from url: https://update.googleapis.com/service/update2/json?cup2key=14:7lhbtYtdDfkPnfx3D_gXn9MMXK_n5-9v26YbDPkmTcE&cup2hreq=6f24a2df4a7235b1dadcf5be9d7d95d2e0784d733f9f2a15832a8cd473906b02
+[23656:34740:0521/163302.058:VERBOSE1:profile_manager.cc(1377)] RemoveKeepAlive(Default, kExtensionUpdater). keep_alives=[kWaitingForFirstBrowserWindow (1), kAppWindow (1)]
+[37952:26964:0521/163433.693:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/163433.697:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/163433.697:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/163433.713:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/163433.713:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/163433.713:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/163716.003:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/163716.007:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/163716.007:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/163716.025:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/163716.025:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/163716.025:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/163952.555:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/163952.562:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/163952.562:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/163952.572:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/163952.572:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/163952.572:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/164245.729:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/164245.733:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/164245.734:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/164245.751:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/164245.751:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/164245.751:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/164543.053:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/164543.058:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/164543.058:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/164543.069:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/164543.069:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/164543.069:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/164830.094:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/164830.099:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/164830.100:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/164830.108:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/164830.108:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/164830.108:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/165117.937:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/165117.941:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/165117.941:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/165117.971:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/165117.972:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/165117.972:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/165401.340:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/165401.344:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/165401.345:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/165401.353:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/165401.353:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/165401.353:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/165645.858:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/165645.863:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/165645.865:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/165645.865:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/165645.876:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/165645.876:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/165645.876:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/165921.168:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/165921.175:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/165921.176:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/165921.185:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/165921.185:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/165921.185:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/170027.008:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://safebrowsing.googleapis.com/v4/threatListUpdates:fetch?$req=ChoKCGNocm9taXVtEg4xMjguMC42NjEzLjEzOBoMCAUQASIEIAEgAigBGgwIARABIgQgASACKAEaDAgDEAEiBCABIAIoARoMCAcQASIEIAEgAigBGgwIARAIIgQgASACKAQaDAgPEAEiBCABIAIoARoMCAkQASIEIAEgAigBIgIIAQ==&$ct=application/x-protobuf&key=dummytoken
+[37952:26964:0521/170027.012:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/170027.014:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/170027.014:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/170027.020:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/170027.020:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/170027.020:VERBOSE1:tls_client_handshaker.cc(625)] 0-RTT handshake attempted but was rejected by the server
+[37952:26964:0521/170027.020:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/170027.020:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/170027.021:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/170027.021:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/170158.404:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/170158.409:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/170158.410:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/170158.419:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/170158.419:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/170158.419:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/170435.705:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/170435.709:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/170435.709:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/170435.729:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/170435.729:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/170435.729:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/170720.652:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/170720.657:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/170720.657:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/170720.667:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/170720.667:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/170720.667:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/170959.232:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/170959.241:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/170959.242:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/170959.251:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/170959.251:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/170959.251:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/171240.271:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/171240.275:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/171240.277:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/171240.287:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/171240.287:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/171240.287:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/171527.162:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/171527.166:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/171527.166:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/171527.176:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/171527.176:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/171527.176:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/171815.902:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/171815.921:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/171815.921:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/171815.931:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/171815.931:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/171815.931:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/172102.412:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/172102.420:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/172102.421:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/172102.435:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/172102.435:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/172102.435:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/172340.085:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/172340.089:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/172340.089:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/172340.097:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/172340.097:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/172340.097:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/172628.428:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/172628.432:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/172628.432:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/172628.440:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/172628.440:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/172628.440:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/172910.072:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/172910.077:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/172910.078:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/172910.079:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/172910.086:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/172910.086:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/172910.086:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/173200.341:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/173200.346:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/173200.346:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/173200.356:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/173200.356:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/173200.356:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/173453.022:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/173453.025:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/173453.026:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/173453.035:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/173453.035:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/173453.035:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/173735.351:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/173735.357:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/173735.357:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/173735.366:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/173735.366:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/173735.366:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/173944.991:VERBOSE1:logging_network_change_observer.cc(90)] Observed a change to the network IP addresses
+[37952:26964:0521/173946.004:VERBOSE1:logging_network_change_observer.cc(100)] Observed a change to network connectivity state CONNECTION_ETHERNET
+[37952:26964:0521/173946.517:VERBOSE1:logging_network_change_observer.cc(113)] Observed a network change to state CONNECTION_NONE
+[37952:26964:0521/173946.517:VERBOSE1:logging_network_change_observer.cc(113)] Observed a network change to state CONNECTION_ETHERNET
+[37952:26964:0521/173947.003:VERBOSE1:configured_proxy_resolution_service.cc(1162)] Failed configuring with PAC script, falling-back to manual proxy servers.
+[37952:26964:0521/173947.003:VERBOSE1:configured_proxy_resolution_service.cc(1162)] Failed configuring with PAC script, falling-back to manual proxy servers.
+[37952:26964:0521/173947.003:VERBOSE1:configured_proxy_resolution_service.cc(1162)] Failed configuring with PAC script, falling-back to manual proxy servers.
+[23656:34740:0521/173947.063:VERBOSE1:device_event_log_impl.cc(198)] [17:39:47.063] USB: USER: usb_service_win.cc:674 USB device removed: path=\\?\usb#vid_1366&pid_0101#000831618826#{a5dcbf10-6530-11d2-901f-00c04fb951ed} guid=663871e7-5748-4be1-b0f4-803a79dfec26
+[23656:34740:0521/173947.063:VERBOSE1:device_event_log_impl.cc(198)] [17:39:47.063] USB: USER: usb_service_win.cc:674 USB device removed: path=\\?\usb#vid_17ef&pid_103b#0000000000000001#{a5dcbf10-6530-11d2-901f-00c04fb951ed} guid=37dafac9-1203-46a8-b828-1a2670d8d235
+[23656:34740:0521/173947.965:VERBOSE1:device_event_log_impl.cc(198)] [17:39:47.965] USB: USER: usb_service_win.cc:762 USB device added: path=\\?\usb#vid_1366&pid_0101#000831618826#{a5dcbf10-6530-11d2-901f-00c04fb951ed} vendor=4966 "SEGGER", product=257 "J-Link", serial="000831618826", driver="jlink", guid=1245191d-f6f5-4080-8c85-a2f83aca1f1e
+[23656:34740:0521/173951.981:VERBOSE1:device_event_log_impl.cc(198)] [17:39:51.980] USB: USER: usb_service_win.cc:762 USB device added: path=\\?\usb#vid_17ef&pid_103b#0000000000000001#{a5dcbf10-6530-11d2-901f-00c04fb951ed} vendor=6127 "VIA Labs, Inc.         ", product=4155 "USB Billboard Device   ", serial="0000000000000001", driver="WINUSB", guid=8d094c86-c50c-48ec-bbc5-007b7d077357
+[37952:26964:0521/173952.093:VERBOSE1:logging_network_change_observer.cc(90)] Observed a change to the network IP addresses
+[37952:26964:0521/173953.115:VERBOSE1:logging_network_change_observer.cc(100)] Observed a change to network connectivity state CONNECTION_ETHERNET
+[37952:26964:0521/173953.626:VERBOSE1:logging_network_change_observer.cc(113)] Observed a network change to state CONNECTION_NONE
+[37952:26964:0521/173953.626:VERBOSE1:logging_network_change_observer.cc(113)] Observed a network change to state CONNECTION_ETHERNET
+[37952:26964:0521/173954.117:VERBOSE1:configured_proxy_resolution_service.cc(1162)] Failed configuring with PAC script, falling-back to manual proxy servers.
+[37952:26964:0521/173954.118:VERBOSE1:configured_proxy_resolution_service.cc(1162)] Failed configuring with PAC script, falling-back to manual proxy servers.
+[37952:26964:0521/173954.118:VERBOSE1:configured_proxy_resolution_service.cc(1162)] Failed configuring with PAC script, falling-back to manual proxy servers.
+[37952:26964:0521/174007.461:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/174007.466:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/174007.466:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/174007.476:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/174007.476:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/174007.477:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/174240.570:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/174240.573:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/174240.573:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/174240.582:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/174240.582:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/174240.582:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/174517.445:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/174517.449:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/174517.449:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/174517.458:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/174517.458:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/174517.458:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[23656:18668:0521/174721.267:VERBOSE1:media_stream_manager.cc(1533)] MSPL::OnSpeedLimitChange({this=00006304022B2B40}, {new_limit=83})
+[23656:18668:0521/174723.285:VERBOSE1:media_stream_manager.cc(1533)] MSPL::OnSpeedLimitChange({this=00006304022B2B40}, {new_limit=81})
+[23656:18668:0521/174724.294:VERBOSE1:media_stream_manager.cc(1533)] MSPL::OnSpeedLimitChange({this=00006304022B2B40}, {new_limit=82})
+[23656:18668:0521/174725.295:VERBOSE1:media_stream_manager.cc(1533)] MSPL::OnSpeedLimitChange({this=00006304022B2B40}, {new_limit=100})

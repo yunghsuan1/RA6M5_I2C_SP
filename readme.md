@@ -75,6 +75,8 @@
 
 本專案附帶 PC 端視覺化調試程式 `uart_monitor.py`，基於 Python Tkinter 與 `pyserial` 開發。
 
+![GUI 介面執行畫面](photo/comport_tool.png)
+
 *   **雙欄獨立顯示**：左右分欄分別連接 Master (UART9) 與 Slave (UART8)，一目了然觀測雙端互動。
 *   **連線指示燈**：紅/綠雙色圓形燈顯示當前 COM 埠的連線狀態。
 *   **動態重整**：一鍵刷新並檢測目前電腦上可用的 COM 埠，支援多種常見鮑率。

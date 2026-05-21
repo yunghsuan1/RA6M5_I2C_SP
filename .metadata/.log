@@ -6793,3 +6793,401 @@ com.renesas.cdt.debug.adm.TargetTimeoutException: target time out on message:'$q
 	at com.renesas.cdt.debug.adm.Target.pollTarget(Target.java:61)
 	at com.renesas.cdt.debug.adm.Target$MonitorTargetThread.run(Target.java:128)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY com.renesas.debug.adm.core 4 0 2026-05-21 17:39:44.678
+!MESSAGE IO Error in socket
+!STACK 0
+java.net.SocketException: 連線已被您主機上的軟體中止。
+	at java.base/sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at java.base/sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:46)
+	at java.base/sun.nio.ch.NioSocketImpl.tryRead(NioSocketImpl.java:256)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:307)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:350)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:393)
+	at java.base/sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:217)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:171)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:188)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:160)
+	at java.base/java.io.BufferedReader.read1(BufferedReader.java:225)
+	at java.base/java.io.BufferedReader.implRead(BufferedReader.java:314)
+	at java.base/java.io.BufferedReader.read(BufferedReader.java:296)
+	at com.renesas.cdt.debug.adm.ADMSocketConnection$SocketThread.awaitAndProcessMessageReply(ADMSocketConnection.java:247)
+	at com.renesas.cdt.debug.adm.ADMSocketConnection$SocketThread.run(ADMSocketConnection.java:203)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY com.renesas.debug.adm.core 4 0 2026-05-21 17:39:44.694
+!MESSAGE IO Error in socket
+!STACK 0
+java.net.SocketException: 連線已被您主機上的軟體中止。
+	at java.base/sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at java.base/sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:46)
+	at java.base/sun.nio.ch.NioSocketImpl.tryRead(NioSocketImpl.java:256)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:307)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:350)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:393)
+	at java.base/sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:217)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:171)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:188)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:160)
+	at java.base/java.io.BufferedReader.read1(BufferedReader.java:225)
+	at java.base/java.io.BufferedReader.implRead(BufferedReader.java:314)
+	at java.base/java.io.BufferedReader.read(BufferedReader.java:296)
+	at com.renesas.cdt.debug.adm.ADMSocketConnection$SocketThread.awaitAndProcessMessageReply(ADMSocketConnection.java:247)
+	at com.renesas.cdt.debug.adm.ADMSocketConnection$SocketThread.run(ADMSocketConnection.java:203)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY com.renesas.cdt.debug.adm 4 0 2026-05-21 17:41:24.680
+!MESSAGE Failed, getting target status, ADM timed out
+!STACK 0
+com.renesas.cdt.debug.adm.TargetTimeoutException: target time out on message:'$qrenesas.ITarget:getTargetStatus#a5'
+	at com.renesas.cdt.debug.adm.messages.Message.waitForResponse(Message.java:551)
+	at com.renesas.cdt.debug.adm.messages.Message.send(Message.java:167)
+	at com.renesas.cdt.debug.adm.Target.getStatus(Target.java:33)
+	at com.renesas.cdt.debug.adm.Target.pollTarget(Target.java:61)
+	at com.renesas.cdt.debug.adm.Target$MonitorTargetThread.run(Target.java:128)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY com.renesas.cdt.debug.adm 4 0 2026-05-21 17:41:24.695
+!MESSAGE Failed, getting output data of Sim IO, ADM timed out
+!STACK 0
+com.renesas.cdt.debug.adm.TargetTimeoutException: target time out on message:'$qrenesas.ISimulatedIO:simulatedIOGetOutputData#de'
+	at com.renesas.cdt.debug.adm.messages.Message.waitForResponse(Message.java:551)
+	at com.renesas.cdt.debug.adm.messages.Message.send(Message.java:167)
+	at com.renesas.cdt.debug.adm.SimulatedIO.pollSimulatedIO(SimulatedIO.java:175)
+	at com.renesas.cdt.debug.adm.SimulatedIO$SimulatedIOThread.pollForData(SimulatedIO.java:279)
+	at com.renesas.cdt.debug.adm.SimulatedIO$SimulatedIOThread.run(SimulatedIO.java:251)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY com.renesas.debug.adm.core 4 0 2026-05-21 17:41:25.695
+!MESSAGE IO Error in socket
+!STACK 0
+java.net.SocketException: 連線已被您主機上的軟體中止。
+	at java.base/sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at java.base/sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:46)
+	at java.base/sun.nio.ch.NioSocketImpl.tryRead(NioSocketImpl.java:256)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:307)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:350)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:393)
+	at java.base/sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:217)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:171)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:188)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:160)
+	at java.base/java.io.BufferedReader.read1(BufferedReader.java:225)
+	at java.base/java.io.BufferedReader.implRead(BufferedReader.java:314)
+	at java.base/java.io.BufferedReader.read(BufferedReader.java:296)
+	at com.renesas.cdt.debug.adm.ADMSocketConnection$SocketThread.awaitAndProcessMessageReply(ADMSocketConnection.java:247)
+	at com.renesas.cdt.debug.adm.ADMSocketConnection$SocketThread.run(ADMSocketConnection.java:203)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY com.renesas.debug.adm.core 4 0 2026-05-21 17:41:25.710
+!MESSAGE IO Error in socket
+!STACK 0
+java.net.SocketException: 連線已被您主機上的軟體中止。
+	at java.base/sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at java.base/sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:46)
+	at java.base/sun.nio.ch.NioSocketImpl.tryRead(NioSocketImpl.java:256)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:307)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:350)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:393)
+	at java.base/sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:217)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:171)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:188)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:160)
+	at java.base/java.io.BufferedReader.read1(BufferedReader.java:225)
+	at java.base/java.io.BufferedReader.implRead(BufferedReader.java:314)
+	at java.base/java.io.BufferedReader.read(BufferedReader.java:296)
+	at com.renesas.cdt.debug.adm.ADMSocketConnection$SocketThread.awaitAndProcessMessageReply(ADMSocketConnection.java:247)
+	at com.renesas.cdt.debug.adm.ADMSocketConnection$SocketThread.run(ADMSocketConnection.java:203)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY com.renesas.cdt.debug.adm 4 0 2026-05-21 17:43:05.696
+!MESSAGE Failed, getting target status, ADM timed out
+!STACK 0
+com.renesas.cdt.debug.adm.TargetTimeoutException: target time out on message:'$qrenesas.ITarget:getTargetStatus#a5'
+	at com.renesas.cdt.debug.adm.messages.Message.waitForResponse(Message.java:551)
+	at com.renesas.cdt.debug.adm.messages.Message.send(Message.java:167)
+	at com.renesas.cdt.debug.adm.Target.getStatus(Target.java:33)
+	at com.renesas.cdt.debug.adm.Target.pollTarget(Target.java:61)
+	at com.renesas.cdt.debug.adm.Target$MonitorTargetThread.run(Target.java:128)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY com.renesas.cdt.debug.adm 4 0 2026-05-21 17:43:05.712
+!MESSAGE Failed, getting output data of Sim IO, ADM timed out
+!STACK 0
+com.renesas.cdt.debug.adm.TargetTimeoutException: target time out on message:'$qrenesas.ISimulatedIO:simulatedIOGetOutputData#de'
+	at com.renesas.cdt.debug.adm.messages.Message.waitForResponse(Message.java:551)
+	at com.renesas.cdt.debug.adm.messages.Message.send(Message.java:167)
+	at com.renesas.cdt.debug.adm.SimulatedIO.pollSimulatedIO(SimulatedIO.java:175)
+	at com.renesas.cdt.debug.adm.SimulatedIO$SimulatedIOThread.pollForData(SimulatedIO.java:279)
+	at com.renesas.cdt.debug.adm.SimulatedIO$SimulatedIOThread.run(SimulatedIO.java:251)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY com.renesas.debug.adm.core 4 0 2026-05-21 17:43:06.711
+!MESSAGE IO Error in socket
+!STACK 0
+java.net.SocketException: 連線已被您主機上的軟體中止。
+	at java.base/sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at java.base/sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:46)
+	at java.base/sun.nio.ch.NioSocketImpl.tryRead(NioSocketImpl.java:256)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:307)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:350)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:393)
+	at java.base/sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:217)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:171)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:188)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:160)
+	at java.base/java.io.BufferedReader.read1(BufferedReader.java:225)
+	at java.base/java.io.BufferedReader.implRead(BufferedReader.java:314)
+	at java.base/java.io.BufferedReader.read(BufferedReader.java:296)
+	at com.renesas.cdt.debug.adm.ADMSocketConnection$SocketThread.awaitAndProcessMessageReply(ADMSocketConnection.java:247)
+	at com.renesas.cdt.debug.adm.ADMSocketConnection$SocketThread.run(ADMSocketConnection.java:203)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY com.renesas.debug.adm.core 4 0 2026-05-21 17:43:07.204
+!MESSAGE IO Error in socket
+!STACK 0
+java.net.SocketException: 連線已被您主機上的軟體中止。
+	at java.base/sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at java.base/sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:46)
+	at java.base/sun.nio.ch.NioSocketImpl.tryRead(NioSocketImpl.java:256)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:307)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:350)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:393)
+	at java.base/sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:217)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:171)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:188)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:160)
+	at java.base/java.io.BufferedReader.read1(BufferedReader.java:225)
+	at java.base/java.io.BufferedReader.implRead(BufferedReader.java:314)
+	at java.base/java.io.BufferedReader.read(BufferedReader.java:296)
+	at com.renesas.cdt.debug.adm.ADMSocketConnection$SocketThread.awaitAndProcessMessageReply(ADMSocketConnection.java:247)
+	at com.renesas.cdt.debug.adm.ADMSocketConnection$SocketThread.run(ADMSocketConnection.java:203)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY com.renesas.cdt.debug.adm 4 0 2026-05-21 17:44:46.725
+!MESSAGE Failed, getting target status, ADM timed out
+!STACK 0
+com.renesas.cdt.debug.adm.TargetTimeoutException: target time out on message:'$qrenesas.ITarget:getTargetStatus#a5'
+	at com.renesas.cdt.debug.adm.messages.Message.waitForResponse(Message.java:551)
+	at com.renesas.cdt.debug.adm.messages.Message.send(Message.java:167)
+	at com.renesas.cdt.debug.adm.Target.getStatus(Target.java:33)
+	at com.renesas.cdt.debug.adm.Target.pollTarget(Target.java:61)
+	at com.renesas.cdt.debug.adm.Target$MonitorTargetThread.run(Target.java:128)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY com.renesas.cdt.debug.adm 4 0 2026-05-21 17:44:46.741
+!MESSAGE Failed, getting output data of Sim IO, ADM timed out
+!STACK 0
+com.renesas.cdt.debug.adm.TargetTimeoutException: target time out on message:'$qrenesas.ISimulatedIO:simulatedIOGetOutputData#de'
+	at com.renesas.cdt.debug.adm.messages.Message.waitForResponse(Message.java:551)
+	at com.renesas.cdt.debug.adm.messages.Message.send(Message.java:167)
+	at com.renesas.cdt.debug.adm.SimulatedIO.pollSimulatedIO(SimulatedIO.java:175)
+	at com.renesas.cdt.debug.adm.SimulatedIO$SimulatedIOThread.pollForData(SimulatedIO.java:279)
+	at com.renesas.cdt.debug.adm.SimulatedIO$SimulatedIOThread.run(SimulatedIO.java:251)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY com.renesas.debug.adm.core 4 0 2026-05-21 17:44:47.740
+!MESSAGE IO Error in socket
+!STACK 0
+java.net.SocketException: 連線已被您主機上的軟體中止。
+	at java.base/sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at java.base/sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:46)
+	at java.base/sun.nio.ch.NioSocketImpl.tryRead(NioSocketImpl.java:256)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:307)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:350)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:393)
+	at java.base/sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:217)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:171)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:188)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:160)
+	at java.base/java.io.BufferedReader.read1(BufferedReader.java:225)
+	at java.base/java.io.BufferedReader.implRead(BufferedReader.java:314)
+	at java.base/java.io.BufferedReader.read(BufferedReader.java:296)
+	at com.renesas.cdt.debug.adm.ADMSocketConnection$SocketThread.awaitAndProcessMessageReply(ADMSocketConnection.java:247)
+	at com.renesas.cdt.debug.adm.ADMSocketConnection$SocketThread.run(ADMSocketConnection.java:203)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY com.renesas.debug.adm.core 4 0 2026-05-21 17:44:47.756
+!MESSAGE IO Error in socket
+!STACK 0
+java.net.SocketException: 連線已被您主機上的軟體中止。
+	at java.base/sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at java.base/sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:46)
+	at java.base/sun.nio.ch.NioSocketImpl.tryRead(NioSocketImpl.java:256)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:307)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:350)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:393)
+	at java.base/sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:217)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:171)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:188)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:160)
+	at java.base/java.io.BufferedReader.read1(BufferedReader.java:225)
+	at java.base/java.io.BufferedReader.implRead(BufferedReader.java:314)
+	at java.base/java.io.BufferedReader.read(BufferedReader.java:296)
+	at com.renesas.cdt.debug.adm.ADMSocketConnection$SocketThread.awaitAndProcessMessageReply(ADMSocketConnection.java:247)
+	at com.renesas.cdt.debug.adm.ADMSocketConnection$SocketThread.run(ADMSocketConnection.java:203)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY com.renesas.cdt.debug.adm 4 0 2026-05-21 17:46:27.748
+!MESSAGE Failed, getting target status, ADM timed out
+!STACK 0
+com.renesas.cdt.debug.adm.TargetTimeoutException: target time out on message:'$qrenesas.ITarget:getTargetStatus#a5'
+	at com.renesas.cdt.debug.adm.messages.Message.waitForResponse(Message.java:551)
+	at com.renesas.cdt.debug.adm.messages.Message.send(Message.java:167)
+	at com.renesas.cdt.debug.adm.Target.getStatus(Target.java:33)
+	at com.renesas.cdt.debug.adm.Target.pollTarget(Target.java:61)
+	at com.renesas.cdt.debug.adm.Target$MonitorTargetThread.run(Target.java:128)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY com.renesas.cdt.debug.adm 4 0 2026-05-21 17:46:27.763
+!MESSAGE Failed, getting output data of Sim IO, ADM timed out
+!STACK 0
+com.renesas.cdt.debug.adm.TargetTimeoutException: target time out on message:'$qrenesas.ISimulatedIO:simulatedIOGetOutputData#de'
+	at com.renesas.cdt.debug.adm.messages.Message.waitForResponse(Message.java:551)
+	at com.renesas.cdt.debug.adm.messages.Message.send(Message.java:167)
+	at com.renesas.cdt.debug.adm.SimulatedIO.pollSimulatedIO(SimulatedIO.java:175)
+	at com.renesas.cdt.debug.adm.SimulatedIO$SimulatedIOThread.pollForData(SimulatedIO.java:279)
+	at com.renesas.cdt.debug.adm.SimulatedIO$SimulatedIOThread.run(SimulatedIO.java:251)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY com.renesas.debug.adm.core 4 0 2026-05-21 17:46:28.761
+!MESSAGE IO Error in socket
+!STACK 0
+java.net.SocketException: 連線已被您主機上的軟體中止。
+	at java.base/sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at java.base/sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:46)
+	at java.base/sun.nio.ch.NioSocketImpl.tryRead(NioSocketImpl.java:256)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:307)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:350)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:393)
+	at java.base/sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:217)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:171)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:188)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:160)
+	at java.base/java.io.BufferedReader.read1(BufferedReader.java:225)
+	at java.base/java.io.BufferedReader.implRead(BufferedReader.java:314)
+	at java.base/java.io.BufferedReader.read(BufferedReader.java:296)
+	at com.renesas.cdt.debug.adm.ADMSocketConnection$SocketThread.awaitAndProcessMessageReply(ADMSocketConnection.java:247)
+	at com.renesas.cdt.debug.adm.ADMSocketConnection$SocketThread.run(ADMSocketConnection.java:203)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY com.renesas.debug.adm.core 4 0 2026-05-21 17:46:28.776
+!MESSAGE IO Error in socket
+!STACK 0
+java.net.SocketException: 連線已被您主機上的軟體中止。
+	at java.base/sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at java.base/sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:46)
+	at java.base/sun.nio.ch.NioSocketImpl.tryRead(NioSocketImpl.java:256)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:307)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:350)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:393)
+	at java.base/sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:217)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:171)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:188)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:160)
+	at java.base/java.io.BufferedReader.read1(BufferedReader.java:225)
+	at java.base/java.io.BufferedReader.implRead(BufferedReader.java:314)
+	at java.base/java.io.BufferedReader.read(BufferedReader.java:296)
+	at com.renesas.cdt.debug.adm.ADMSocketConnection$SocketThread.awaitAndProcessMessageReply(ADMSocketConnection.java:247)
+	at com.renesas.cdt.debug.adm.ADMSocketConnection$SocketThread.run(ADMSocketConnection.java:203)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY com.renesas.cdt.debug.adm 4 0 2026-05-21 17:48:08.768
+!MESSAGE Failed, getting target status, ADM timed out
+!STACK 0
+com.renesas.cdt.debug.adm.TargetTimeoutException: target time out on message:'$qrenesas.ITarget:getTargetStatus#a5'
+	at com.renesas.cdt.debug.adm.messages.Message.waitForResponse(Message.java:551)
+	at com.renesas.cdt.debug.adm.messages.Message.send(Message.java:167)
+	at com.renesas.cdt.debug.adm.Target.getStatus(Target.java:33)
+	at com.renesas.cdt.debug.adm.Target.pollTarget(Target.java:61)
+	at com.renesas.cdt.debug.adm.Target$MonitorTargetThread.run(Target.java:128)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY com.renesas.cdt.debug.adm 4 0 2026-05-21 17:48:08.784
+!MESSAGE Failed, getting output data of Sim IO, ADM timed out
+!STACK 0
+com.renesas.cdt.debug.adm.TargetTimeoutException: target time out on message:'$qrenesas.ISimulatedIO:simulatedIOGetOutputData#de'
+	at com.renesas.cdt.debug.adm.messages.Message.waitForResponse(Message.java:551)
+	at com.renesas.cdt.debug.adm.messages.Message.send(Message.java:167)
+	at com.renesas.cdt.debug.adm.SimulatedIO.pollSimulatedIO(SimulatedIO.java:175)
+	at com.renesas.cdt.debug.adm.SimulatedIO$SimulatedIOThread.pollForData(SimulatedIO.java:279)
+	at com.renesas.cdt.debug.adm.SimulatedIO$SimulatedIOThread.run(SimulatedIO.java:251)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY com.renesas.debug.adm.core 4 0 2026-05-21 17:48:09.769
+!MESSAGE IO Error in socket
+!STACK 0
+java.net.SocketException: 連線已被您主機上的軟體中止。
+	at java.base/sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at java.base/sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:46)
+	at java.base/sun.nio.ch.NioSocketImpl.tryRead(NioSocketImpl.java:256)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:307)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:350)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:393)
+	at java.base/sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:217)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:171)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:188)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:160)
+	at java.base/java.io.BufferedReader.read1(BufferedReader.java:225)
+	at java.base/java.io.BufferedReader.implRead(BufferedReader.java:314)
+	at java.base/java.io.BufferedReader.read(BufferedReader.java:296)
+	at com.renesas.cdt.debug.adm.ADMSocketConnection$SocketThread.awaitAndProcessMessageReply(ADMSocketConnection.java:247)
+	at com.renesas.cdt.debug.adm.ADMSocketConnection$SocketThread.run(ADMSocketConnection.java:203)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY com.renesas.debug.adm.core 4 0 2026-05-21 17:48:10.035
+!MESSAGE IO Error in socket
+!STACK 0
+java.net.SocketException: 連線已被您主機上的軟體中止。
+	at java.base/sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at java.base/sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:46)
+	at java.base/sun.nio.ch.NioSocketImpl.tryRead(NioSocketImpl.java:256)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:307)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:350)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:393)
+	at java.base/sun.nio.cs.StreamDecoder.lockedRead(StreamDecoder.java:217)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:171)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:188)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:160)
+	at java.base/java.io.BufferedReader.read1(BufferedReader.java:225)
+	at java.base/java.io.BufferedReader.implRead(BufferedReader.java:314)
+	at java.base/java.io.BufferedReader.read(BufferedReader.java:296)
+	at com.renesas.cdt.debug.adm.ADMSocketConnection$SocketThread.awaitAndProcessMessageReply(ADMSocketConnection.java:247)
+	at com.renesas.cdt.debug.adm.ADMSocketConnection$SocketThread.run(ADMSocketConnection.java:203)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
