@@ -1,0 +1,10 @@
+# Eclipse / e2 studio 暫存與設定資料夾
+.metadata/
+
+# 編譯產出檔案 (Build Artifacts)
+**/Debug/
+**/Release/
+
+# J-Link 偵錯日誌與設定檔
+*.log
+*.jlink

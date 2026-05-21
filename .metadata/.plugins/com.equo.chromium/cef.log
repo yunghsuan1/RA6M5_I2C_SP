@@ -1,0 +1,117 @@
+[37952:26964:0521/134552.423:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/134552.427:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/134552.428:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/134552.437:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/134552.438:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/134552.438:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/134848.437:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/134848.444:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/134848.445:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/134848.459:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/134848.459:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/134848.460:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/134853.105:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://safebrowsing.googleapis.com/v4/threatListUpdates:fetch?$req=ChoKCGNocm9taXVtEg4xMjguMC42NjEzLjEzOBoMCAUQASIEIAEgAigBGgwIARABIgQgASACKAEaDAgDEAEiBCABIAIoARoMCAcQASIEIAEgAigBGgwIARAIIgQgASACKAQaDAgPEAEiBCABIAIoARoMCAkQASIEIAEgAigBIgIIAQ==&$ct=application/x-protobuf&key=dummytoken
+[37952:26964:0521/134853.109:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/134853.110:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/134853.110:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/134853.118:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/134853.118:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/134853.118:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[23656:34740:0521/135000.693:VERBOSE1:device_event_log_impl.cc(198)] [13:50:00.693] Display: EVENT: screen_win.cc:893 Displays updated, count: 2
+[23656:34740:0521/135000.693:VERBOSE1:device_event_log_impl.cc(198)] [13:50:00.693] Display: EVENT: screen_win.cc:895 Display[3677164300] bounds=[0,0 1920x1080], workarea=[0,0 1920x1032], scale=1, rotation=0, panel_rotation=0 external detected
+[23656:34740:0521/135000.693:VERBOSE1:device_event_log_impl.cc(198)] [13:50:00.693] Display: EVENT: screen_win.cc:895 Display[1815604365] bounds=[1920,0 1920x1080], workarea=[1920,0 1920x1032], scale=1, rotation=0, panel_rotation=0 external detected
+[23656:34740:0521/135015.098:VERBOSE1:device_event_log_impl.cc(198)] [13:50:15.098] Display: EVENT: screen_win.cc:893 Displays updated, count: 2
+[23656:34740:0521/135015.098:VERBOSE1:device_event_log_impl.cc(198)] [13:50:15.098] Display: EVENT: screen_win.cc:895 Display[3677164300] bounds=[0,0 1920x1080], workarea=[0,0 1920x1032], scale=1, rotation=0, panel_rotation=0 external detected
+[23656:34740:0521/135015.098:VERBOSE1:device_event_log_impl.cc(198)] [13:50:15.098] Display: EVENT: screen_win.cc:895 Display[1815604365] bounds=[1920,0 1920x1080], workarea=[1920,0 1920x1032], scale=1, rotation=0, panel_rotation=0 external detected
+[23656:34740:0521/135135.845:VERBOSE1:device_event_log_impl.cc(198)] [13:51:35.845] Display: EVENT: screen_win.cc:893 Displays updated, count: 2
+[23656:34740:0521/135135.845:VERBOSE1:device_event_log_impl.cc(198)] [13:51:35.845] Display: EVENT: screen_win.cc:895 Display[3677164300] bounds=[0,0 1920x1080], workarea=[0,0 1920x1032], scale=1, rotation=0, panel_rotation=0 external detected
+[23656:34740:0521/135135.845:VERBOSE1:device_event_log_impl.cc(198)] [13:51:35.845] Display: EVENT: screen_win.cc:895 Display[1815604365] bounds=[1920,0 1920x1080], workarea=[1920,0 1920x1032], scale=1, rotation=0, panel_rotation=0 external detected
+[37952:26964:0521/135144.028:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/135144.032:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/135144.034:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/135144.044:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/135144.044:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/135144.044:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[23656:34740:0521/135149.082:VERBOSE1:device_event_log_impl.cc(198)] [13:51:49.082] Display: EVENT: screen_win.cc:893 Displays updated, count: 2
+[23656:34740:0521/135149.082:VERBOSE1:device_event_log_impl.cc(198)] [13:51:49.082] Display: EVENT: screen_win.cc:895 Display[3677164300] bounds=[0,0 1920x1080], workarea=[0,0 1920x1032], scale=1, rotation=0, panel_rotation=0 external detected
+[23656:34740:0521/135149.082:VERBOSE1:device_event_log_impl.cc(198)] [13:51:49.082] Display: EVENT: screen_win.cc:895 Display[1815604365] bounds=[1920,0 1920x1080], workarea=[1920,0 1920x1032], scale=1, rotation=0, panel_rotation=0 external detected
+[37952:26964:0521/135431.340:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/135431.344:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/135431.344:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/135431.353:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/135431.353:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/135431.353:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/135711.981:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/135711.986:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/135711.987:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/135711.994:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/135711.994:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/135711.994:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/135950.012:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/135950.017:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/135950.017:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/135950.048:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/135950.048:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/135950.048:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/140247.091:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/140247.095:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/140247.096:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/140247.097:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/140247.106:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/140247.106:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/140247.106:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/140529.421:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/140529.426:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/140529.426:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/140529.436:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/140529.436:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/140529.436:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[23656:34740:0521/140550.737:VERBOSE1:device_event_log_impl.cc(198)] [14:05:50.736] Display: EVENT: screen_win.cc:893 Displays updated, count: 2
+[23656:34740:0521/140550.737:VERBOSE1:device_event_log_impl.cc(198)] [14:05:50.736] Display: EVENT: screen_win.cc:895 Display[3677164300] bounds=[0,0 1920x1080], workarea=[0,0 1920x1032], scale=1, rotation=0, panel_rotation=0 external detected
+[23656:34740:0521/140550.737:VERBOSE1:device_event_log_impl.cc(198)] [14:05:50.737] Display: EVENT: screen_win.cc:895 Display[1815604365] bounds=[1920,0 1920x1080], workarea=[1920,0 1920x1032], scale=1, rotation=0, panel_rotation=0 external detected
+[23656:34740:0521/140627.556:VERBOSE1:device_event_log_impl.cc(198)] [14:06:27.555] Display: EVENT: screen_win.cc:893 Displays updated, count: 2
+[23656:34740:0521/140627.556:VERBOSE1:device_event_log_impl.cc(198)] [14:06:27.555] Display: EVENT: screen_win.cc:895 Display[3677164300] bounds=[0,0 1920x1080], workarea=[0,0 1920x1032], scale=1, rotation=0, panel_rotation=0 external detected
+[23656:34740:0521/140627.556:VERBOSE1:device_event_log_impl.cc(198)] [14:06:27.555] Display: EVENT: screen_win.cc:895 Display[1815604365] bounds=[1920,0 1920x1080], workarea=[1920,0 1920x1032], scale=1, rotation=0, panel_rotation=0 external detected
+[37952:26964:0521/140817.029:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/140817.033:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/140817.034:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/140817.042:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/140817.042:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/140817.042:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[23656:34740:0521/140940.685:VERBOSE1:device_event_log_impl.cc(198)] [14:09:40.685] Display: EVENT: screen_win.cc:893 Displays updated, count: 2
+[23656:34740:0521/140940.685:VERBOSE1:device_event_log_impl.cc(198)] [14:09:40.686] Display: EVENT: screen_win.cc:895 Display[3677164300] bounds=[0,0 1920x1080], workarea=[0,0 1920x1032], scale=1, rotation=0, panel_rotation=0 external detected
+[23656:34740:0521/140940.685:VERBOSE1:device_event_log_impl.cc(198)] [14:09:40.686] Display: EVENT: screen_win.cc:895 Display[1815604365] bounds=[1920,0 1920x1080], workarea=[1920,0 1920x1032], scale=1, rotation=0, panel_rotation=0 external detected
+[37952:26964:0521/141115.098:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/141115.102:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/141115.103:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/141115.112:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/141115.112:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/141115.112:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/141402.578:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/141402.583:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/141402.583:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/141402.596:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/141402.596:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/141402.596:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[37952:26964:0521/141644.513:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/141644.516:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/141644.516:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/141644.528:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/141644.528:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/141644.528:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[23656:34740:0521/141903.756:VERBOSE1:device_event_log_impl.cc(198)] [14:19:03.756] Display: EVENT: screen_win.cc:893 Displays updated, count: 2
+[23656:34740:0521/141903.756:VERBOSE1:device_event_log_impl.cc(198)] [14:19:03.756] Display: EVENT: screen_win.cc:895 Display[3677164300] bounds=[0,0 1920x1080], workarea=[0,0 1920x1032], scale=1, rotation=0, panel_rotation=0 external detected
+[23656:34740:0521/141903.756:VERBOSE1:device_event_log_impl.cc(198)] [14:19:03.756] Display: EVENT: screen_win.cc:895 Display[1815604365] bounds=[1920,0 1920x1080], workarea=[1920,0 1920x1032], scale=1, rotation=0, panel_rotation=0 external detected
+[37952:26964:0521/141943.828:VERBOSE1:network_delegate.cc(36)] NetworkDelegate::NotifyBeforeURLRequest: https://optimizationguide-pa.googleapis.com/v1:GetModels?key=dummytoken
+[37952:26964:0521/141943.832:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/141943.832:VERBOSE1:tls_handshaker.cc(126)] TlsClient: SSL_do_handshake returned when entering early data. After retry, rv=-1, SSL_in_early_data=1
+[37952:26964:0521/141943.848:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/141943.848:VERBOSE1:tls_handshaker.cc(105)] TlsClient: Continuing handshake
+[37952:26964:0521/141943.848:VERBOSE1:tls_client_handshaker.cc(528)] Client: handshake finished
+[23656:18668:0521/142030.636:VERBOSE1:media_stream_manager.cc(1533)] MSPL::OnSpeedLimitChange({this=00006304022B2B40}, {new_limit=68})
+[23656:18668:0521/142031.638:VERBOSE1:media_stream_manager.cc(1533)] MSPL::OnSpeedLimitChange({this=00006304022B2B40}, {new_limit=70})
+[23656:18668:0521/142032.653:VERBOSE1:media_stream_manager.cc(1533)] MSPL::OnSpeedLimitChange({this=00006304022B2B40}, {new_limit=66})
+[23656:18668:0521/142033.670:VERBOSE1:media_stream_manager.cc(1533)] MSPL::OnSpeedLimitChange({this=00006304022B2B40}, {new_limit=69})
+[23656:18668:0521/142034.678:VERBOSE1:media_stream_manager.cc(1533)] MSPL::OnSpeedLimitChange({this=00006304022B2B40}, {new_limit=67})
+[23656:18668:0521/142035.692:VERBOSE1:media_stream_manager.cc(1533)] MSPL::OnSpeedLimitChange({this=00006304022B2B40}, {new_limit=68})
+[23656:18668:0521/142037.698:VERBOSE1:media_stream_manager.cc(1533)] MSPL::OnSpeedLimitChange({this=00006304022B2B40}, {new_limit=63})
