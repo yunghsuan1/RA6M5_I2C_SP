@@ -6,7 +6,7 @@
         #endif
 /* Number of interrupts allocated */
 #ifndef VECTOR_DATA_IRQ_COUNT
-#define VECTOR_DATA_IRQ_COUNT    (16)
+#define VECTOR_DATA_IRQ_COUNT    (20)
 #endif
 /* ISR prototypes */
 void sci_uart_rxi_isr(void);
@@ -55,8 +55,16 @@ void iic_slave_eri_isr(void);
 #define IIC1_TEI_IRQn          ((IRQn_Type) 14) /* IIC1 TEI (Transmit end) */
 #define VECTOR_NUMBER_IIC1_ERI ((IRQn_Type) 15) /* IIC1 ERI (Transfer error) */
 #define IIC1_ERI_IRQn          ((IRQn_Type) 15) /* IIC1 ERI (Transfer error) */
+#define VECTOR_NUMBER_IIC2_RXI ((IRQn_Type) 16) /* IIC2 RXI (Receive data full) */
+#define IIC2_RXI_IRQn          ((IRQn_Type) 16) /* IIC2 RXI (Receive data full) */
+#define VECTOR_NUMBER_IIC2_TXI ((IRQn_Type) 17) /* IIC2 TXI (Transmit data empty) */
+#define IIC2_TXI_IRQn          ((IRQn_Type) 17) /* IIC2 TXI (Transmit data empty) */
+#define VECTOR_NUMBER_IIC2_TEI ((IRQn_Type) 18) /* IIC2 TEI (Transmit end) */
+#define IIC2_TEI_IRQn          ((IRQn_Type) 18) /* IIC2 TEI (Transmit end) */
+#define VECTOR_NUMBER_IIC2_ERI ((IRQn_Type) 19) /* IIC2 ERI (Transfer error) */
+#define IIC2_ERI_IRQn          ((IRQn_Type) 19) /* IIC2 ERI (Transfer error) */
 /* The number of entries required for the ICU vector table. */
-#define BSP_ICU_VECTOR_NUM_ENTRIES (16)
+#define BSP_ICU_VECTOR_NUM_ENTRIES (20)
 
 #ifdef __cplusplus
         }

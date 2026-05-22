@@ -219,8 +219,8 @@ FSP Configuration
       P406 7 - - - - Disabled - - "AGT5: AGTO5; ETHERC_MII0: ET0_RX_ER; ETHERC_RMII0: RMII_TXD1; GPT1: GTIOC1B; SPI0: SSLA3; SSI0: SSIRXD0" - None - - 
       P407 44 - - - - Disabled - - "ADC0: ADTRG0; AGT0: AGTIO0; CTSU0: TS03; ETHERC_MII0: ET0_EXOUT; ETHERC_RMII0: ET0_EXOUT; GPT6: GTIOC6A; IIC0: SDA0; RTC0: RTCOUT; SCI4: CTSRTS4; SPI0: SSLA3; USB_FS0: USB_VBUS" - None - - 
       P408 43 - - - - Disabled - - "AGT2: AGTOB2; CTSU0: TS04; ETHERC_MII0: ET0_CRS; ETHERC_RMII0: RMII_CRS_DV; GPT_OPS0: GTOWLO; GPT6: GTIOC6B; ICU0: IRQ07; IIC0: SCL0; SCI3: RXD3; SCI3: SCL3; SCI4: CTS4; USB_FS0: USB_ID; USB_HS0: USBHS_ID" - None - - 
-      P409 42 - - - - Disabled - - "AGT2: AGTOA2; CTSU0: TS05; ETHERC_MII0: ET0_RX_CLK; ETHERC_RMII0: RMII_RX_ER; GPT_OPS0: GTOWUP; ICU0: IRQ06; IIC2: SDA2; SCI3: SDA3; SCI3: TXD3; USB_FS0: USB_EXICEN; USB_HS0: USBHS_EXICEN" - None - - 
-      P410 41 - - - - Disabled - - "AGT1: AGTOB1; CTSU0: TS06; ETHERC_MII0: ET0_ERXD0; ETHERC_RMII0: RMII_RXD1; GPT_OPS0: GTOVLO; GPT9: GTIOC9B; ICU0: IRQ05; IIC2: SCL2; SCI0: RXD0; SCI0: SCL0; SCI3: SCK3; SDHI0: SD0DAT1; SPI1: MISOB" - None - - 
+      P409 42 IIC2_SDA2 - Medium None "Peripheral mode" CMOS None "AGT2: AGTOA2; CTSU0: TS05; ETHERC_MII0: ET0_RX_CLK; ETHERC_RMII0: RMII_RX_ER; GPT_OPS0: GTOWUP; ICU0: IRQ06; IIC2: SDA2; SCI3: SDA3; SCI3: TXD3; USB_FS0: USB_EXICEN; USB_HS0: USBHS_EXICEN" - IO - - 
+      P410 41 IIC2_SCL2 - Medium None "Peripheral mode" CMOS None "AGT1: AGTOB1; CTSU0: TS06; ETHERC_MII0: ET0_ERXD0; ETHERC_RMII0: RMII_RXD1; GPT_OPS0: GTOVLO; GPT9: GTIOC9B; ICU0: IRQ05; IIC2: SCL2; SCI0: RXD0; SCI0: SCL0; SCI3: SCK3; SDHI0: SD0DAT1; SPI1: MISOB" - IO - - 
       P411 40 - - - - Disabled - - "AGT1: AGTOA1; CTSU0: TS07; ETHERC_MII0: ET0_ERXD1; ETHERC_RMII0: RMII_RXD0; GPT_OPS0: GTOVUP; GPT9: GTIOC9A; ICU0: IRQ04; SCI0: SDA0; SCI0: TXD0; SCI3: CTSRTS3; SDHI0: SD0DAT0; SPI1: MOSIB" - None - - 
       P412 39 - - - - Disabled - - "AGT1: AGTEE1; CTSU0: TS08; ETHERC_MII0: ET0_ETXD0; ETHERC_RMII0: REF50CK; GPT_OPS0: GTOULO; SCI0: SCK0; SCI3: CTS3; SDHI0: SD0CMD; SPI1: RSPCKB" - None - - 
       P413 38 - - - - Disabled - - "AGT3: AGTEE3; CTSU0: TS09; ETHERC_MII0: ET0_ETXD1; ETHERC_RMII0: RMII_TXD0; GPT_OPS0: GTOUUP; SCI0: CTSRTS0; SDHI0: SD0CLK; SPI1: SSLB0" - None - - 
@@ -445,6 +445,20 @@ FSP Configuration
       Address Mode: 7-Bit
       Clock Stretching: Disabled
       Callback: cb_g_i2c_slave0
+      Interrupt Priority Level: Transmit, Receive, and Transmit End: Priority 12
+      Interrupt Priority Level: Error: Priority 12
+      
+    Instance "g_i2c_slave2 I2C Slave (r_iic_slave)"
+      Name: g_i2c_slave2
+      Channel: 2
+      Rate: Standard
+      Internal Reference Clock: PCLKB / 1
+      Digital Noise Filter Stage Select: 3-stage filter
+      Slave Address: 0x4B
+      General Call: Disabled
+      Address Mode: 7-Bit
+      Clock Stretching: Disabled
+      Callback: cb_g_i2c_slave2
       Interrupt Priority Level: Transmit, Receive, and Transmit End: Priority 12
       Interrupt Priority Level: Error: Priority 12
       

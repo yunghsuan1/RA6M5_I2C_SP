@@ -11,6 +11,7 @@ extern "C" {
 // 協定常數定義
 #define I2C_PACKET_HEADER       0x5A     // 標記封包起始 (Header)
 #define I2C_SLAVE_ADDR          0x4A     // Slave I2C 位址 (7-bit)
+#define I2C_SLAVE2_ADDR         0x4B     // Slave 2 I2C 位址 (7-bit) - TSN 遙測
 
 // 指令集定義 (Command ID)
 #define I2C_CMD_LED_CONTROL     0x01     // LED 控制指令

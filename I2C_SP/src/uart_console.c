@@ -149,26 +149,53 @@ void uart_console_process_rx(uart_console_t *p_con, const char *console_name) {
                     uart_console_print(p_con, "  blue [on|off|blink]  - 控制藍燈(P006)\r\n");
                     uart_console_print(p_con, "  green [on|off|blink] - 控制綠燈(P007)\r\n");
                     uart_console_print(p_con, "  red [on|off|blink]   - 控制紅燈(P008)\r\n");
-                    uart_console_print(p_con, "  status               - 查詢 LED 目前狀態\r\n");
+                    uart_console_print(p_con, "  status               - 查詢狀態 (LED / TSN 溫度)\r\n");
+                    if (strcmp(console_name, "MASTER") == 0) {
+                        uart_console_print(p_con, "  tsn                  - 讀取 MCU 真實內部溫度 (TSN)\r\n");
+                    }
                     uart_console_print(p_con, "==========================\r\n");
                 } 
                 else if (strcmp(cmd, "status") == 0) {
                     const char *st_str[] = {"OFF", "ON", "BLINK"};
                     if (strcmp(console_name, "MASTER") == 0) {
                         uint8_t blue = 0, green = 0, red = 0;
-                        uart_console_print(p_con, "[Master UART] 正在透過 I2C 向 Slave 讀取狀態...\r\n");
-                        fsp_err_t err = i2c_master_read_status(&blue, &green, &red);
-                        if (FSP_SUCCESS == err) {
-                            uart_console_print(p_con, "LED Status (來自 Slave): Blue=%s, Green=%s, Red=%s\r\n",
+                        float temp = 0.0f;
+                        
+                        uart_console_print(p_con, "[Master UART] 正在向 Slave 1 讀取 LED 狀態...\r\n");
+                        fsp_err_t err1 = i2c_master_read_status(&blue, &green, &red);
+                        if (FSP_SUCCESS == err1) {
+                            uart_console_print(p_con, "  LED Status (來自 Slave 1): Blue=%s, Green=%s, Red=%s\r\n",
                                                st_str[blue], st_str[green], st_str[red]);
                         } else {
-                            uart_console_print(p_con, "[Master UART] 錯誤: 無法從 Slave 獲取狀態 (錯誤碼: 0x%X)\r\n", err);
+                            uart_console_print(p_con, "  [錯誤] 無法從 Slave 1 獲取 LED 狀態 (0x%X)\r\n", err1);
+                        }
+
+                        uart_console_print(p_con, "[Master UART] 正在向 Slave 2 讀取 TSN 溫度...\r\n");
+                        fsp_err_t err2 = i2c_master_read_tsn(&temp);
+                        if (FSP_SUCCESS == err2) {
+                            uart_console_print(p_con, "  TSN Temperature (來自 Slave 2): %.2f °C\r\n", temp);
+                        } else {
+                            uart_console_print(p_con, "  [錯誤] 無法從 Slave 2 獲取 TSN 溫度 (0x%X)\r\n", err2);
                         }
                     } else {
                         uart_console_print(p_con, "LED Status: Blue=%s, Green=%s, Red=%s\r\n",
                                            st_str[g_led_blue_state], 
                                            st_str[g_led_green_state], 
                                            st_str[g_led_red_state]);
+                    }
+                }
+                else if (strcmp(cmd, "tsn") == 0) {
+                    if (strcmp(console_name, "MASTER") == 0) {
+                        float temp = 0.0f;
+                        uart_console_print(p_con, "[Master UART] 正在透過 I2C 向 Slave 2 讀取 TSN 溫度...\r\n");
+                        fsp_err_t err = i2c_master_read_tsn(&temp);
+                        if (FSP_SUCCESS == err) {
+                            uart_console_print(p_con, "[Master UART] 成功讀取 TSN 溫度: %.2f °C\r\n", temp);
+                        } else {
+                            uart_console_print(p_con, "[Master UART] 錯誤: 無法從 Slave 2 讀取 TSN 溫度 (0x%X)\r\n", err);
+                        }
+                    } else {
+                        uart_console_print(p_con, "錯誤: tsn 指令僅限 Master 端執行。\r\n");
                     }
                 }
                 // 藍燈控制

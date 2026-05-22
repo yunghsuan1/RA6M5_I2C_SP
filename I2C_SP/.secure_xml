@@ -72,6 +72,8 @@
       <configSetting altId="iic0.sda.p401" configurationId="iic0.sda" isUsedByDriver="true" peripheral="IIC0"/>
       <configSetting altId="iic1.scl.p512" configurationId="iic1.scl" isUsedByDriver="true" peripheral="IIC1"/>
       <configSetting altId="iic1.sda.p511" configurationId="iic1.sda" isUsedByDriver="true" peripheral="IIC1"/>
+      <configSetting altId="iic2.scl.p410" configurationId="iic2.scl" isUsedByDriver="true" peripheral="IIC2"/>
+      <configSetting altId="iic2.sda.p409" configurationId="iic2.sda" isUsedByDriver="true" peripheral="IIC2"/>
       <configSetting altId="p006.output.low" configurationId="p006"/>
       <configSetting altId="p007.output.low" configurationId="p007"/>
       <configSetting altId="p008.output.low" configurationId="p008"/>

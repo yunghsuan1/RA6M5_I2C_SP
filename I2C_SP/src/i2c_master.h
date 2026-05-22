@@ -17,6 +17,9 @@ fsp_err_t i2c_master_send_led_cmd(uint8_t led_color, uint8_t led_mode);
 // 向 Slave 讀取 LED 狀態
 fsp_err_t i2c_master_read_status(uint8_t *p_blue, uint8_t *p_green, uint8_t *p_red);
 
+// 向 Slave 2 讀取 TSN 遙測溫度
+fsp_err_t i2c_master_read_tsn(float *p_temp);
+
 // I2C Master 中斷回呼函式宣告 (與 FSP 配置一致)
 void cb_g_i2c_master0(i2c_master_callback_args_t *p_args);
 

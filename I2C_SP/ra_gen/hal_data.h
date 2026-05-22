@@ -12,6 +12,16 @@
 #include "r_uart_api.h"
 FSP_HEADER
 /** I2C Slave on IIC Instance. */
+extern const i2c_slave_instance_t g_i2c_slave2;
+
+/** Access the I2C Slave instance using these structures when calling API functions directly (::p_api is not used). */
+extern iic_slave_instance_ctrl_t g_i2c_slave2_ctrl;
+extern const i2c_slave_cfg_t g_i2c_slave2_cfg;
+
+#ifndef cb_g_i2c_slave2
+void cb_g_i2c_slave2(i2c_slave_callback_args_t *p_args);
+#endif
+/** I2C Slave on IIC Instance. */
 extern const i2c_slave_instance_t g_i2c_slave0;
 
 /** Access the I2C Slave instance using these structures when calling API functions directly (::p_api is not used). */

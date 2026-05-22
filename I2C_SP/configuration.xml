@@ -352,12 +352,27 @@
       <property id="module.driver.i2c_slave.ipl" value="board.icu.common.irq.priority12"/>
       <property id="module.driver.i2c_slave.eri_ipl" value="board.icu.common.irq.priority12"/>
     </module>
+    <module id="module.driver.i2c_on_iic_slave.1424512065">
+      <property id="module.driver.i2c_slave.name" value="g_i2c_slave2"/>
+      <property id="module.driver.i2c_slave.channel" value="2"/>
+      <property id="module.driver.i2c_slave.rate" value="module.driver.i2c_slave.rate.rate_standard"/>
+      <property id="module.driver.i2c_slave.cks" value="module.driver.i2c_slave.cks.cks_1"/>
+      <property id="module.driver.i2c_slave.dfs" value="module.driver.i2c_slave.dfs.3"/>
+      <property id="module.driver.i2c_slave.slave" value="0x4B"/>
+      <property id="module.driver.i2c_slave.general_call_enable" value="module.driver.i2c_slave.general_call_enable.disabled"/>
+      <property id="module.driver.i2c_slave.addr_mode" value="module.driver.i2c_slave.addr_mode.addr_mode_7bit"/>
+      <property id="module.driver.i2c_slave.scl_low_hold_wait_enable" value="module.driver.i2c_slave.scl_low_hold_wait_enable.disabled"/>
+      <property id="module.driver.i2c_slave.p_callback" value="cb_g_i2c_slave2"/>
+      <property id="module.driver.i2c_slave.ipl" value="board.icu.common.irq.priority12"/>
+      <property id="module.driver.i2c_slave.eri_ipl" value="board.icu.common.irq.priority12"/>
+    </module>
     <context id="_hal.0">
       <stack module="module.driver.ioport_on_ioport.0"/>
       <stack module="module.driver.uart_on_sci_uart.1493208571"/>
       <stack module="module.driver.uart_on_sci_uart.1157205640"/>
       <stack module="module.driver.i2c_on_iic_master.204858972"/>
       <stack module="module.driver.i2c_on_iic_slave.739541624"/>
+      <stack module="module.driver.i2c_on_iic_slave.1424512065"/>
     </context>
     <config id="config.driver.iic_master">
       <property id="config.driver.iic_master.param_checking_enable" value="config.driver.iic_master.param_checking_enable.bsp"/>
@@ -392,6 +407,9 @@
       <configSetting altId="iic1.mode.enabled.a" configurationId="iic1.mode"/>
       <configSetting altId="iic1.scl.p512" configurationId="iic1.scl"/>
       <configSetting altId="iic1.sda.p511" configurationId="iic1.sda"/>
+      <configSetting altId="iic2.mode.enabled.a" configurationId="iic2.mode"/>
+      <configSetting altId="iic2.scl.p410" configurationId="iic2.scl"/>
+      <configSetting altId="iic2.sda.p409" configurationId="iic2.sda"/>
       <configSetting altId="p006.output.low" configurationId="p006"/>
       <configSetting altId="p006.gpio_mode.gpio_mode_out.low" configurationId="p006.gpio_mode"/>
       <configSetting altId="p007.output.low" configurationId="p007"/>
@@ -416,6 +434,12 @@
       <configSetting altId="p401.iic0.sda" configurationId="p401"/>
       <configSetting altId="p401.gpio_speed.gpio_speed_medium" configurationId="p401.gpio_drivecapacity"/>
       <configSetting altId="p401.gpio_mode.gpio_mode_peripheral" configurationId="p401.gpio_mode"/>
+      <configSetting altId="p409.iic2.sda" configurationId="p409"/>
+      <configSetting altId="p409.gpio_speed.gpio_speed_medium" configurationId="p409.gpio_drivecapacity"/>
+      <configSetting altId="p409.gpio_mode.gpio_mode_peripheral" configurationId="p409.gpio_mode"/>
+      <configSetting altId="p410.iic2.scl" configurationId="p410"/>
+      <configSetting altId="p410.gpio_speed.gpio_speed_medium" configurationId="p410.gpio_drivecapacity"/>
+      <configSetting altId="p410.gpio_mode.gpio_mode_peripheral" configurationId="p410.gpio_mode"/>
       <configSetting altId="p511.iic1.sda" configurationId="p511"/>
       <configSetting altId="p511.gpio_speed.gpio_speed_medium" configurationId="p511.gpio_drivecapacity"/>
       <configSetting altId="p511.gpio_mode.gpio_mode_peripheral" configurationId="p511.gpio_mode"/>

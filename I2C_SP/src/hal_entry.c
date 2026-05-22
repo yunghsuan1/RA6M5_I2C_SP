@@ -2,6 +2,7 @@
 #include "uart_console.h"
 #include "i2c_master.h"
 #include "i2c_slave.h"
+#include "i2c_slave2.h"
 
 // 宣告系統滴答計數器 (毫秒)
 extern volatile uint32_t g_system_ticks;
@@ -20,9 +21,10 @@ void hal_entry(void)
     // 2. 初始化雙 UART 控制台 (開啟硬體驅動、註冊接收緩衝)
     uart_console_init();
 
-    // 3. 初始化 I2C Master0 與 Slave1 驅動模組
+    // 3. 初始化 I2C Master0、Slave1 與 Slave2 驅動模組
     i2c_master_init();
     i2c_slave_init();
+    i2c_slave2_init();
 
     // 4. 在兩個控制台上印出連線成功歡迎詞與說明
     uart_console_print(&g_console_master, "\r\n*** RA6M5 Master Console (UART9) Online ***\r\n");
@@ -43,8 +45,9 @@ void hal_entry(void)
         // B. 處理 UART8 的 RX 指令解析 (Slave)
         uart_console_process_rx(&g_console_slave, "SLAVE");
 
-        // C. 輪詢處理 I2C Slave 接收佇列/封包解析
+        // C. 輪詢處理 I2C Slave1 與 Slave2 接收佇列/封包與日誌解析
         i2c_slave_process();
+        i2c_slave2_process();
 
         // D. 處理 LED 閃爍與狀態翻轉邏輯
         led_process();

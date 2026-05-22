@@ -143,3 +143,71 @@ fsp_err_t i2c_master_read_status(uint8_t *p_blue, uint8_t *p_green, uint8_t *p_r
     
     return FSP_SUCCESS;
 }
+
+// 向 Slave 2 讀取 TSN 遙測溫度
+fsp_err_t i2c_master_read_tsn(float *p_temp) {
+    static uint8_t rx_buf[5]; // Header(0x5A) | Temp_Int | Temp_Dec | Reserved(0) | CRC8
+    memset(rx_buf, 0, sizeof(rx_buf));
+
+    // 1. 切換 Slave Address 至 Slave 2 (0x4B)
+    fsp_err_t err = R_IIC_MASTER_SlaveAddressSet(&g_i2c_master0_ctrl, I2C_SLAVE2_ADDR, I2C_MASTER_ADDR_MODE_7BIT);
+    if (FSP_SUCCESS != err) {
+        uart_console_print(&g_console_master, "[Master I2C] 切換 Slave 2 位址失敗, 錯誤碼: 0x%X\r\n", err);
+        return err;
+    }
+
+    g_i2c_master_rx_complete = false;
+    g_i2c_master_err = false;
+
+    // 2. 啟動 I2C 讀取
+    err = R_IIC_MASTER_Read(&g_i2c_master0_ctrl, rx_buf, sizeof(rx_buf), false);
+    if (FSP_SUCCESS != err) {
+        uart_console_print(&g_console_master, "[Master I2C] 讀取 TSN 啟動失敗, 錯誤碼: 0x%X\r\n", err);
+        // 恢復至 Slave 1 (0x4A)
+        R_IIC_MASTER_SlaveAddressSet(&g_i2c_master0_ctrl, I2C_SLAVE_ADDR, I2C_MASTER_ADDR_MODE_7BIT);
+        return err;
+    }
+
+    // 3. 等待讀取完成
+    uint32_t timeout = 50000; // 約 50ms 逾時
+    while (!g_i2c_master_rx_complete && !g_i2c_master_err && timeout > 0) {
+        timeout--;
+        R_BSP_SoftwareDelay(1, BSP_DELAY_UNITS_MICROSECONDS);
+    }
+
+    // 4. 無論讀取成功或失敗，都恢復位址到 Slave 1 (0x4A)
+    R_IIC_MASTER_SlaveAddressSet(&g_i2c_master0_ctrl, I2C_SLAVE_ADDR, I2C_MASTER_ADDR_MODE_7BIT);
+
+    if (g_i2c_master_err) {
+        uart_console_print(&g_console_master, "[Master I2C] 讀取 TSN 被硬體中止 (NAK 或 匯流排錯誤)\r\n");
+        return FSP_ERR_ABORTED;
+    }
+
+    if (timeout == 0) {
+        uart_console_print(&g_console_master, "[Master I2C] 讀取 TSN 逾時\r\n");
+        return FSP_ERR_TIMEOUT;
+    }
+
+    // 5. 封包校驗
+    if (rx_buf[0] != I2C_PACKET_HEADER) {
+        uart_console_print(&g_console_master, "[Master I2C] TSN 封包 Header 錯誤: 0x%02X\r\n", rx_buf[0]);
+        return FSP_ERR_INVALID_DATA;
+    }
+
+    uint8_t received_crc = rx_buf[4];
+    uint8_t calc_crc = crc8_calc(rx_buf, 4);
+    if (calc_crc != received_crc) {
+        uart_console_print(&g_console_master, "[Master I2C] TSN 封包 CRC8 校驗失敗！計算值: 0x%02X, 收到值: 0x%02X\r\n",
+                           calc_crc, received_crc);
+        return FSP_ERR_INVALID_DATA;
+    }
+
+    // 6. 解析溫度
+    *p_temp = (float)rx_buf[1] + ((float)rx_buf[2] / 100.0f);
+
+    // 印出接收的封包
+    uart_console_print(&g_console_master, "[Master I2C] 成功讀取 TSN 遙測封包: [5A %02X %02X %02X -> CRC:%02X]\r\n",
+                       rx_buf[1], rx_buf[2], rx_buf[3], rx_buf[4]);
+
+    return FSP_SUCCESS;
+}
