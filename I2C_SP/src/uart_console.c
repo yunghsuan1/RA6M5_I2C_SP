@@ -1,9 +1,125 @@
 #include "uart_console.h"
 #include "i2c_master.h"
+#include "i2c_slave.h"
 #include <stdio.h>
 #include <stdarg.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdlib.h>
+
+// 暫存器讀寫參數解析輔助函式
+static bool parse_uint8(const char *str, uint8_t *val) {
+    char *endptr;
+    long lval = strtol(str, &endptr, 0);
+    if (endptr == str) {
+        return false;
+    }
+    if (lval < 0 || lval > 255) {
+        return false;
+    }
+    *val = (uint8_t)lval;
+    return true;
+}
+
+// 暫存器狀態人性化輸出輔助函式
+static void print_register(uart_console_t *p_con, uint8_t reg, uint8_t val) {
+    const char *err_str[] = {"NONE", "BAD_CRC", "BAD_HEADER", "BAD_LEN"};
+    const char *state_str[] = {"OFF", "ON", "BLINK"};
+    
+    switch (reg) {
+        case REG_DEVICE_ID:
+            uart_console_print(p_con, "[REG] DEVICE_ID = 0x%02X\r\n", val);
+            break;
+        case REG_FW_VERSION:
+            uart_console_print(p_con, "[REG] FW_VERSION = 0x%02X\r\n", val);
+            break;
+        case REG_BLUE_STATE:
+            if (val <= 2) {
+                uart_console_print(p_con, "[REG] BLUE_STATE = %d (%s)\r\n", val, state_str[val]);
+            } else {
+                uart_console_print(p_con, "[REG] BLUE_STATE = %d (INVALID)\r\n", val);
+            }
+            break;
+        case REG_GREEN_STATE:
+            if (val <= 2) {
+                uart_console_print(p_con, "[REG] GREEN_STATE = %d (%s)\r\n", val, state_str[val]);
+            } else {
+                uart_console_print(p_con, "[REG] GREEN_STATE = %d (INVALID)\r\n", val);
+            }
+            break;
+        case REG_RED_STATE:
+            if (val <= 2) {
+                uart_console_print(p_con, "[REG] RED_STATE = %d (%s)\r\n", val, state_str[val]);
+            } else {
+                uart_console_print(p_con, "[REG] RED_STATE = %d (INVALID)\r\n", val);
+            }
+            break;
+        case REG_RX_PACKET_COUNT:
+            uart_console_print(p_con, "[REG] RX_PACKET_COUNT = %d\r\n", val);
+            break;
+        case REG_CRC_FAIL_COUNT:
+            uart_console_print(p_con, "[REG] CRC_FAIL_COUNT = %d\r\n", val);
+            break;
+        case REG_LAST_ERROR:
+            if (val <= 3) {
+                uart_console_print(p_con, "[REG] LAST_ERROR = %s\r\n", err_str[val]);
+            } else {
+                uart_console_print(p_con, "[REG] LAST_ERROR = %d (UNKNOWN)\r\n", val);
+            }
+            break;
+        case REG_LAST_COMMAND:
+            uart_console_print(p_con, "[REG] LAST_COMMAND = 0x%02X\r\n", val);
+            break;
+        default:
+            uart_console_print(p_con, "[REG] REG_0x%02X = 0x%02X\r\n", reg, val);
+            break;
+    }
+}
+
+// 暫存器圖譜樹狀圖列印
+static void print_regmap_tree(uart_console_t *p_con, const uint8_t *vals) {
+    const char *err_str[] = {"NONE", "BAD_CRC", "BAD_HEADER", "BAD_LEN"};
+    const char *state_str[] = {"OFF", "ON", "BLINK"};
+    
+    uart_console_print(p_con, "\r\nSlave 1 (0x4A) Register Map Tree:\r\n");
+    
+    // System Registers
+    uart_console_print(p_con, "├── System Registers\r\n");
+    uart_console_print(p_con, "│   ├── [0x00] DEVICE_ID   (RO) = 0x%02X  [Device ID]\r\n", vals[REG_DEVICE_ID]);
+    uart_console_print(p_con, "│   └── [0x01] FW_VERSION  (RO) = 0x%02X  [Firmware Version]\r\n", vals[REG_FW_VERSION]);
+    
+    // LED Registers
+    uart_console_print(p_con, "├── LED Control Registers (RW)\r\n");
+    for (int i = 0; i < 3; i++) {
+        uint8_t reg = REG_BLUE_STATE + i;
+        uint8_t val = vals[reg];
+        const char *name = (i == 0) ? "BLUE_STATE " : (i == 1) ? "GREEN_STATE" : "RED_STATE  ";
+        const char *color_name = (i == 0) ? "Blue" : (i == 1) ? "Green" : "Red";
+        const char *connector = (i == 2) ? "└──" : "├──";
+        
+        if (val <= 2) {
+            uart_console_print(p_con, "│   %s [%02X] %s (RW) = %d (%s)  [%s LED state]\r\n", 
+                               connector, reg, name, val, state_str[val], color_name);
+        } else {
+            uart_console_print(p_con, "│   %s [%02X] %s (RW) = %d (INVALID)  [%s LED state]\r\n", 
+                               connector, reg, name, val, color_name);
+        }
+    }
+    
+    // Diagnostics
+    uart_console_print(p_con, "└── Diagnostics & Statistics\r\n");
+    uart_console_print(p_con, "    ├── [0x10] RX_PACKETS  (RO) = %d  [Valid custom packets count]\r\n", vals[REG_RX_PACKET_COUNT]);
+    uart_console_print(p_con, "    ├── [0x11] CRC_FAILS   (RO) = %d  [CRC8 verification failures]\r\n", vals[REG_CRC_FAIL_COUNT]);
+    
+    uint8_t err = vals[REG_LAST_ERROR];
+    if (err <= 3) {
+        uart_console_print(p_con, "    ├── [0x12] LAST_ERROR  (RO) = %s  [Last packet error state]\r\n", err_str[err]);
+    } else {
+        uart_console_print(p_con, "    ├── [0x12] LAST_ERROR  (RO) = %d  [Unknown error state]\r\n", err);
+    }
+    
+    uart_console_print(p_con, "    └── [0x13] LAST_CMD    (RO) = 0x%02X  [Last executed Command ID]\r\n\r\n", vals[REG_LAST_COMMAND]);
+}
 
 // 定義系統 Tick
 volatile uint32_t g_system_ticks = 0;
@@ -150,6 +266,10 @@ void uart_console_process_rx(uart_console_t *p_con, const char *console_name) {
                     uart_console_print(p_con, "  green [on|off|blink] - 控制綠燈(P007)\r\n");
                     uart_console_print(p_con, "  red [on|off|blink]   - 控制紅燈(P008)\r\n");
                     uart_console_print(p_con, "  status               - 查詢狀態 (LED / TSN 溫度)\r\n");
+                    uart_console_print(p_con, "  readreg <reg>        - 讀取特定暫存器值 (Hex/Dec)\r\n");
+                    uart_console_print(p_con, "  writereg <reg> <val> - 寫入特定暫存器值\r\n");
+                    uart_console_print(p_con, "  dumpreg              - 傾印所有暫存器狀態\r\n");
+                    uart_console_print(p_con, "  regmap               - 顯示暫存器圖譜樹狀圖\r\n");
                     if (strcmp(console_name, "MASTER") == 0) {
                         uart_console_print(p_con, "  tsn                  - 讀取 MCU 真實內部溫度 (TSN)\r\n");
                         uart_console_print(p_con, "  scan                 - 掃描 I2C 總線裝置 (0x08 ~ 0x77)\r\n");
@@ -288,6 +408,153 @@ void uart_console_process_rx(uart_console_t *p_con, const char *console_name) {
                     } else {
                         led_set_state(I2C_LED_RED, LED_STATE_BLINK);
                         uart_console_print(p_con, "Red LED: BLINK\r\n");
+                    }
+                }
+                // 暫存器讀取指令
+                else if (strncmp(cmd, "readreg", 7) == 0) {
+                    const char *p = cmd + 7;
+                    while (*p && isspace((unsigned char)*p)) {
+                        p++;
+                    }
+                    uint8_t reg = 0;
+                    if (*p != '\0' && parse_uint8(p, &reg)) {
+                        if (strcmp(console_name, "MASTER") == 0) {
+                            uint8_t val = 0;
+                            uart_console_print(p_con, "[Master UART] 正在透過 I2C 向 Slave 1 讀取暫存器 0x%02X...\r\n", reg);
+                            fsp_err_t err = i2c_master_read_reg(reg, &val);
+                            if (FSP_SUCCESS == err) {
+                                print_register(p_con, reg, val);
+                            } else {
+                                uart_console_print(p_con, "[Master UART] 錯誤: 讀取暫存器失敗 (0x%X)\r\n", err);
+                            }
+                        } else {
+                            // Slave 本地控制台
+                            if (reg < 0x20) {
+                                print_register(p_con, reg, g_slave_registers[reg]);
+                            } else {
+                                uart_console_print(p_con, "錯誤: 暫存器位址超出範圍\r\n");
+                            }
+                        }
+                    } else {
+                        uart_console_print(p_con, "用法: readreg <reg_addr>\r\n");
+                    }
+                }
+                // 暫存器寫入指令
+                else if (strncmp(cmd, "writereg", 8) == 0) {
+                    const char *p = cmd + 8;
+                    while (*p && isspace((unsigned char)*p)) {
+                        p++;
+                    }
+                    uint8_t reg = 0;
+                    if (*p != '\0' && parse_uint8(p, &reg)) {
+                        // 找尋空格區隔
+                        while (*p && !isspace((unsigned char)*p)) {
+                            p++;
+                        }
+                        while (*p && isspace((unsigned char)*p)) {
+                            p++;
+                        }
+                        uint8_t val = 0;
+                        if (*p != '\0' && parse_uint8(p, &val)) {
+                            if (strcmp(console_name, "MASTER") == 0) {
+                                uart_console_print(p_con, "[Master UART -> I2C] 轉發暫存器寫入指令: Reg 0x%02X = 0x%02X\r\n", reg, val);
+                                fsp_err_t err = i2c_master_write_reg(reg, val);
+                                if (FSP_SUCCESS == err) {
+                                    uart_console_print(p_con, "[REG] Write Reg 0x%02X = 0x%02X 成功\r\n", reg, val);
+                                } else {
+                                    uart_console_print(p_con, "[Master UART] 錯誤: 寫入暫存器失敗 (0x%X)\r\n", err);
+                                }
+                            } else {
+                                // Slave 本地控制台
+                                if (reg < 0x20) {
+                                    if (reg >= REG_BLUE_STATE && reg <= REG_RED_STATE) {
+                                        g_slave_registers[reg] = val;
+                                        uint8_t led_color = reg - REG_BLUE_STATE;
+                                        led_set_state(led_color, (led_state_t)val);
+                                        uart_console_print(p_con, "[REG] Write Reg 0x%02X = 0x%02X 成功\r\n", reg, val);
+                                    } else {
+                                        uart_console_print(p_con, "警告: 嘗試寫入唯讀暫存器 Reg 0x%02X\r\n", reg);
+                                    }
+                                } else {
+                                    uart_console_print(p_con, "錯誤: 暫存器位址超出範圍\r\n");
+                                }
+                            }
+                        } else {
+                            uart_console_print(p_con, "用法: writereg <reg_addr> <value>\r\n");
+                        }
+                    } else {
+                        uart_console_print(p_con, "用法: writereg <reg_addr> <value>\r\n");
+                    }
+                }
+                // 暫存器 Dump 指令
+                else if (strcmp(cmd, "dumpreg") == 0) {
+                    if (strcmp(console_name, "MASTER") == 0) {
+                        uart_console_print(p_con, "[Master UART] 正在透過 I2C dump Slave 1 暫存器...\r\n");
+                        uint8_t reg_list[] = {
+                            REG_DEVICE_ID, REG_FW_VERSION,
+                            REG_BLUE_STATE, REG_GREEN_STATE, REG_RED_STATE,
+                            REG_RX_PACKET_COUNT, REG_CRC_FAIL_COUNT,
+                            REG_LAST_ERROR, REG_LAST_COMMAND
+                        };
+                        bool success = true;
+                        for (size_t i = 0; i < sizeof(reg_list)/sizeof(reg_list[0]); i++) {
+                            uint8_t val = 0;
+                            fsp_err_t err = i2c_master_read_reg(reg_list[i], &val);
+                            if (FSP_SUCCESS == err) {
+                                print_register(p_con, reg_list[i], val);
+                            } else {
+                                uart_console_print(p_con, "  [錯誤] 讀取暫存器 0x%02X 失敗 (0x%X)\r\n", reg_list[i], err);
+                                success = false;
+                                break;
+                            }
+                            R_BSP_SoftwareDelay(2, BSP_DELAY_UNITS_MILLISECONDS);
+                        }
+                        if (success) {
+                            uart_console_print(p_con, "[Master UART] Dumpreg 完成\r\n");
+                        }
+                    } else {
+                        // Slave 本地控制台
+                        uart_console_print(p_con, "[Slave UART] Dump 本地暫存器...\r\n");
+                        print_register(p_con, REG_DEVICE_ID, g_slave_registers[REG_DEVICE_ID]);
+                        print_register(p_con, REG_FW_VERSION, g_slave_registers[REG_FW_VERSION]);
+                        print_register(p_con, REG_BLUE_STATE, g_slave_registers[REG_BLUE_STATE]);
+                        print_register(p_con, REG_GREEN_STATE, g_slave_registers[REG_GREEN_STATE]);
+                        print_register(p_con, REG_RED_STATE, g_slave_registers[REG_RED_STATE]);
+                        print_register(p_con, REG_RX_PACKET_COUNT, g_slave_registers[REG_RX_PACKET_COUNT]);
+                        print_register(p_con, REG_CRC_FAIL_COUNT, g_slave_registers[REG_CRC_FAIL_COUNT]);
+                        print_register(p_con, REG_LAST_ERROR, g_slave_registers[REG_LAST_ERROR]);
+                        print_register(p_con, REG_LAST_COMMAND, g_slave_registers[REG_LAST_COMMAND]);
+                    }
+                }
+                else if (strcmp(cmd, "regmap") == 0) {
+                    if (strcmp(console_name, "MASTER") == 0) {
+                        uart_console_print(p_con, "[Master UART] 正在透過 I2C 讀取 Slave 1 暫存器以生成樹狀圖...\r\n");
+                        uint8_t reg_list[] = {
+                            REG_DEVICE_ID, REG_FW_VERSION,
+                            REG_BLUE_STATE, REG_GREEN_STATE, REG_RED_STATE,
+                            REG_RX_PACKET_COUNT, REG_CRC_FAIL_COUNT,
+                            REG_LAST_ERROR, REG_LAST_COMMAND
+                        };
+                        uint8_t vals[0x20] = {0};
+                        bool success = true;
+                        for (size_t i = 0; i < sizeof(reg_list)/sizeof(reg_list[0]); i++) {
+                            uint8_t val = 0;
+                            fsp_err_t err = i2c_master_read_reg(reg_list[i], &val);
+                            if (FSP_SUCCESS == err) {
+                                vals[reg_list[i]] = val;
+                            } else {
+                                uart_console_print(p_con, "  [錯誤] 讀取暫存器 0x%02X 失敗 (0x%X)\r\n", reg_list[i], err);
+                                success = false;
+                                break;
+                            }
+                            R_BSP_SoftwareDelay(2, BSP_DELAY_UNITS_MILLISECONDS);
+                        }
+                        if (success) {
+                            print_regmap_tree(p_con, vals);
+                        }
+                    } else {
+                        // Slave 本地控制台
+                        print_regmap_tree(p_con, g_slave_registers);
                     }
                 }
                 else {

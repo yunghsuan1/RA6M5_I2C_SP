@@ -17,6 +17,9 @@ void i2c_slave_process(void);
 // I2C Slave 中斷回呼函式宣告 (與 FSP 配置一致)
 void cb_g_i2c_slave0(i2c_slave_callback_args_t *p_args);
 
+// 虛擬暫存器對外宣告
+extern uint8_t g_slave_registers[0x20];
+
 #ifdef __cplusplus
 }
 #endif

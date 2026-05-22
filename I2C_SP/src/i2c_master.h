@@ -23,6 +23,13 @@ fsp_err_t i2c_master_read_tsn(float *p_temp);
 // 探測特定 I2C 位址是否存在從機 (Bus Scanner)
 fsp_err_t i2c_master_probe(uint8_t addr);
 
+// 讀取從機指定暫存器值
+fsp_err_t i2c_master_read_reg(uint8_t reg, uint8_t *p_val);
+
+// 寫入值至從機指定暫存器
+fsp_err_t i2c_master_write_reg(uint8_t reg, uint8_t val);
+
+
 // I2C Master 中斷回呼函式宣告 (與 FSP 配置一致)
 void cb_g_i2c_master0(i2c_master_callback_args_t *p_args);
 

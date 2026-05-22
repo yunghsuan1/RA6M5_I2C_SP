@@ -60,15 +60,24 @@ graph TD
 ## 🛠️ 韌體架構與功能 (Firmware Architecture)
 
 ### 1. 雙控制台與指令解析 (`uart_console.c`, `ring_buffer.c`)
-利用環形緩衝區實作非阻塞的字元接收與發送。
-在 Master 終端機 (UART9) 下，支援以下指令：
-*   `help` / `?`：顯示可用指令說明。
-*   `blue [on|off|blink]` / `b1` / `b0` / `bb`：控制藍燈。
-*   `green [on|off|blink]` / `g1` / `g0` / `gb`：控制綠燈。
-*   `red [on|off|blink]` / `r1` / `r0` / `rb`：控制紅燈。
-*   `status`：查詢當前系統狀態。會先向 Slave 1 (`0x4A`) 查詢 LED 燈號，隨後向 Slave 2 (`0x4B`) 讀取 TSN 溫度，最後還原目標位址為 `0x4A`。
-*   `tsn`：主動向 Slave 2 (`0x4B`) 查詢真實內部溫度。
-*   `scan`：掃描 I2C 總線上的所有從機裝置（遍歷 `0x08 ~ 0x77`）。
+利用環形緩衝區實作非阻塞的字元接收與發送，支援 Master 控制台 (I2C 通訊轉發) 與 Slave 控制台 (本地暫存器直接讀寫)。
+
+在終端機中，支援以下指令列表：
+```text
+====== 支援指令列表 ======
+  blue [on|off|blink]  - 控制藍燈(P006)
+  green [on|off|blink] - 控制綠燈(P007)
+  red [on|off|blink]   - 控制紅燈(P008)
+  status               - 查詢狀態 (LED / TSN 溫度)
+  readreg <reg>        - 讀取特定暫存器值 (Hex/Dec)
+  writereg <reg> <val> - 寫入特定暫存器值
+  dumpreg              - 傾印所有暫存器狀態
+  regmap               - 顯示暫存器圖譜樹狀圖
+  tsn                  - 讀取 MCU 真實內部溫度 (TSN，僅限 Master 端執行)
+  scan                 - 掃描 I2C 總線裝置 (0x08 ~ 0x77，僅限 Master 端執行)
+==========================
+```
+
 
 ### 2. I2C 封包通訊協定 (`i2c_packet_protocol.h`, `crc8.c`)
 所有通訊皆透過自訂的 5 或 6 位元組封包，並以 CRC8 校驗：
@@ -87,6 +96,43 @@ graph TD
 *   利用出廠工廠校準資料暫存器 `R_TSN_CAL->TSCDR`（以 127°C / 3.3V 為基準的 12 位元 ADC 原始值）以及典型斜率 `BSP_FEATURE_TSN_SLOPE` ($4.0\text{ mV/}^\circ\text{C}$)，進行線性插值計算：
     $$\text{Voltage} = \frac{\text{ADC\_Raw} \times 3.3}{4096}$$
     $$\text{Temperature} = \frac{V_s - V_{cal127}}{\text{Slope}} + 127.0^\circ\text{C}$$
+
+### 4. 虛擬暫存器映射與樹狀圖顯示 (`i2c_slave.c`, `uart_console.c`)
+為將 LED 控制升級為標準的「I2C 裝置暫存器模擬器」，我們在 Slave 1 整合了一套虛擬暫存器映射，允許透過 I2C 指令對其進行暫存器級別的讀寫。
+支援的暫存器分配如下表所示：
+
+| 暫存器位址 | 暫存器名稱 | 權限 | 預設值 | 說明 |
+| :--- | :--- | :--- | :--- | :--- |
+| `0x00` | `DEVICE_ID` | RO | `0xA5` | 裝置 ID 識別碼 |
+| `0x01` | `FW_VERSION` | RO | `0x01` | 韌體版本 |
+| `0x02` | `BLUE_STATE` | RW | `0x00` | 藍色 LED 狀態 (`0`: OFF, `1`: ON, `2`: BLINK) |
+| `0x03` | `GREEN_STATE`| RW | `0x00` | 綠色 LED 狀態 (`0`: OFF, `1`: ON, `2`: BLINK) |
+| `0x04` | `RED_STATE`  | RW | `0x00` | 紅色 LED 狀態 (`0`: OFF, `1`: ON, `2`: BLINK) |
+| `0x10` | `RX_PACKETS` | RO | `0x00` | 成功接收的 I2C 自訂通訊封包數 |
+| `0x11` | `CRC_FAILS`  | RO | `0x00` | CRC8 校驗失敗次數 |
+| `0x12` | `LAST_ERROR` | RO | `0x00` | 上次封包錯誤碼 (`0`:NONE, `1`:BAD_CRC, `2`:BAD_HEADER, `3`:BAD_LEN) |
+| `0x13` | `LAST_CMD`   | RO | `0x00` | 上次成功執行的指令 ID (如 `0x01`) |
+
+在 Master 或 Slave 終端機執行 `regmap` 指令時，會印出精美的 Unicode 階層樹狀圖：
+
+```text
+Slave 1 (0x4A) Register Map Tree:
+├── System Registers
+│   ├── [0x00] DEVICE_ID   (RO) = 0xA5  [Device ID]
+│   └── [0x01] FW_VERSION  (RO) = 0x01  [Firmware Version]
+├── LED Control Registers (RW)
+│   ├── [02] BLUE_STATE  (RW) = 0 (OFF)  [Blue LED state]
+│   ├── [03] GREEN_STATE (RW) = 0 (OFF)  [Green LED state]
+│   └── [04] RED_STATE   (RW) = 0 (OFF)  [Red LED state]
+└── Diagnostics & Statistics
+    ├── [0x10] RX_PACKETS  (RO) = 0  [Valid custom packets count]
+    ├── [0x11] CRC_FAILS   (RO) = 0  [CRC8 verification failures]
+    ├── [0x12] LAST_ERROR  (RO) = NONE  [Last packet error state]
+    └── [0x13] LAST_CMD    (RO) = 0x00  [Last executed Command ID]
+```
+
+#### I2C 鎖死 (Clock Stretch) Bug 修復機制
+在實作 I2C Slave 暫存器讀寫時，我們解決了 FSP 驅動在 Slave 傳送長度小於 Master 讀取長度時會無限觸發 empty buffer 中斷導致 CPU 鎖死的硬體 Bug。我們設計了 **5-byte Safety Buffer** 的防護措施，使 Slave 每次觸發 `TX_REQUEST` 時一律寫入 5 個位元組，若為暫存器讀取則首位元組填入暫存器值，後續補零，並在 Master 讀取完第一個位元組後由 Master 隨即發出 NACK+STOP 斷開總線。此機制既保障了傳輸的正確性，也徹底防止了 SCL Clock Stretch 的凍結問題。
 
 ---
 

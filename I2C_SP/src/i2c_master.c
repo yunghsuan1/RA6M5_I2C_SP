@@ -250,3 +250,79 @@ fsp_err_t i2c_master_probe(uint8_t addr) {
     }
 }
 
+// 讀取從機指定暫存器值
+fsp_err_t i2c_master_read_reg(uint8_t reg, uint8_t *p_val) {
+    static uint8_t s_reg;
+    static uint8_t s_val;
+    s_reg = reg;
+
+    // 1. 先寫入欲讀取的暫存器位址 (1 byte)
+    g_i2c_master_tx_complete = false;
+    g_i2c_master_err = false;
+    
+    // 使用非阻塞寫入發送暫存器指標，Slave Address 預設為 Slave 1 (0x4A)
+    fsp_err_t err = R_IIC_MASTER_Write(&g_i2c_master0_ctrl, &s_reg, 1, false);
+    if (FSP_SUCCESS != err) {
+        return err;
+    }
+
+    uint32_t timeout = 25000; // ~25ms
+    while (!g_i2c_master_tx_complete && !g_i2c_master_err && timeout > 0) {
+        timeout--;
+        R_BSP_SoftwareDelay(1, BSP_DELAY_UNITS_MICROSECONDS);
+    }
+
+    if (g_i2c_master_err) return FSP_ERR_ABORTED;
+    if (timeout == 0) return FSP_ERR_TIMEOUT;
+
+    // 2. 進行 I2C 讀取接收 1 位元組數值
+    g_i2c_master_rx_complete = false;
+    g_i2c_master_err = false;
+
+    err = R_IIC_MASTER_Read(&g_i2c_master0_ctrl, &s_val, 1, false);
+    if (FSP_SUCCESS != err) {
+        return err;
+    }
+
+    timeout = 25000;
+    while (!g_i2c_master_rx_complete && !g_i2c_master_err && timeout > 0) {
+        timeout--;
+        R_BSP_SoftwareDelay(1, BSP_DELAY_UNITS_MICROSECONDS);
+    }
+
+    if (g_i2c_master_err) return FSP_ERR_ABORTED;
+    if (timeout == 0) return FSP_ERR_TIMEOUT;
+
+    *p_val = s_val;
+    return FSP_SUCCESS;
+}
+
+// 寫入值至從機指定暫存器
+fsp_err_t i2c_master_write_reg(uint8_t reg, uint8_t val) {
+    static uint8_t s_tx_buf[2];
+    s_tx_buf[0] = reg;
+    s_tx_buf[1] = val;
+
+    g_i2c_master_tx_complete = false;
+    g_i2c_master_err = false;
+
+    // 寫入格式為：[Register Address] [Value]
+    fsp_err_t err = R_IIC_MASTER_Write(&g_i2c_master0_ctrl, s_tx_buf, 2, false);
+    if (FSP_SUCCESS != err) {
+        return err;
+    }
+
+    uint32_t timeout = 25000;
+    while (!g_i2c_master_tx_complete && !g_i2c_master_err && timeout > 0) {
+        timeout--;
+        R_BSP_SoftwareDelay(1, BSP_DELAY_UNITS_MICROSECONDS);
+    }
+
+    if (g_i2c_master_err) return FSP_ERR_ABORTED;
+    if (timeout == 0) return FSP_ERR_TIMEOUT;
+
+    return FSP_SUCCESS;
+}
+
+
+
