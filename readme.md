@@ -5,6 +5,7 @@
 ### 核心功能
 *   **LED 控制與查詢 (Slave 1 @ 0x4A)**：Master 透過 I2C 指令控制 Slave 1 的三色 LED 狀態（恆亮、熄滅、閃爍），並能主動查詢其真實狀態。
 *   **真實 TSN 溫度遙測 (Slave 2 @ 0x4B)**：Slave 2 透過暫存器級別操作，直接控制內部 12-bit ADC0 與溫度感測器 (TSN)，讀取出廠工廠校準資料並計算出攝氏溫度。Master 可動態切換位址讀取 Slave 2 的溫度封包。
+*   **I2C 總線掃描器 (Bus Scanner)**：Master (IIC0) 可發起 `scan` 指令，遍歷 `0x08 ~ 0x77` 的 7-bit 位址，透過發送 Dummy byte 探測總線上活動的從機（如 0x4A 與 0x4B），並統計發現的裝置總數。
 *   **視覺化偵錯工具**：配備專屬的 Python Tkinter 雙埠序列偵錯終端機，可實時觀測 Master 與 Slave 兩端的互動細節。
 
 ---
@@ -67,6 +68,7 @@ graph TD
 *   `red [on|off|blink]` / `r1` / `r0` / `rb`：控制紅燈。
 *   `status`：查詢當前系統狀態。會先向 Slave 1 (`0x4A`) 查詢 LED 燈號，隨後向 Slave 2 (`0x4B`) 讀取 TSN 溫度，最後還原目標位址為 `0x4A`。
 *   `tsn`：主動向 Slave 2 (`0x4B`) 查詢真實內部溫度。
+*   `scan`：掃描 I2C 總線上的所有從機裝置（遍歷 `0x08 ~ 0x77`）。
 
 ### 2. I2C 封包通訊協定 (`i2c_packet_protocol.h`, `crc8.c`)
 所有通訊皆透過自訂的 5 或 6 位元組封包，並以 CRC8 校驗：
@@ -108,20 +110,18 @@ graph TD
 ### Phase 1 ~ Phase 5 (基礎單一 Master/Slave LED 通訊與 GUI)
 *   完成雙向控制台、環形緩衝區、外接上拉電阻硬體排除、以及單一 Slave 1 (0x4A) LED 控制與狀態讀回。
 
-### Phase 6 (當前階段：多從機共享與實體 TSN Telemetry)
+### Phase 6 (多從機共享與實體 TSN Telemetry)
+*   **實作**：建立 `i2c_slave2.h` / `i2c_slave2.c`，透過暫存器啟用 TSN 與 ADC0，實作 Master 動態位址切換（`0x4B` ↔ `0x4A`）與整合 `status` / `tsn` 指令。
+
+### Phase 7 (當前階段：I2C 總線掃描器實作與同步修正)
 *   **實作**：
-    *   建立並實作 `i2c_slave2.h` 與 `i2c_slave2.c`。
-    *   手動修改 `Debug/src/subdir.mk` 確保編譯器自動編譯 `i2c_slave2.c`。
-    *   在 Master (IIC0) 中實作動態位址切換，發送讀取指令前後使用 `R_IIC_MASTER_SlaveAddressSet` 切換目標從機位址 (`0x4B` 與 `0x4A`)。
-    *   在 Master 終端機新增 `tsn` 與整合型 `status` 指令。
+    *   在 Master 實作 `i2c_master_probe` 函式，發送 1-byte Dummy 寫入來探測 ACK。
+    *   在 Master 終端機加入 `scan` 指令。
+    *   在 Slave 2 的回呼函式補上 `I2C_SLAVE_EVENT_RX_REQUEST` 處理以接收並清空掃描產生的 Dummy 封包，維持狀態機同步，解決掃描後第一次讀取 `tsn` 出現 Header 錯誤的問題。
 *   **手動驗證流程**：
-    1.  將實體並聯接線連接妥當（SCL三線並聯，SDA三線並聯，並確保有 4.7K 上拉電阻）。
-    2.  在 e2 studio 中點擊 **Build** 並燒錄至 EK-RA6M5 開發板。
-    3.  打開 `uart_monitor.py` 或序列埠助手，在 Master 終端機輸入 `tsn`。
-        *   **預期結果**：Master 顯示 `[Master UART] 成功讀取 TSN 溫度: XX.XX °C`（讀值約在 25°C ~ 45°C 之間）。
-        *   同時 Slave 終端機輸出 `[Slave 2 I2C] 成功發送 TSN 遙測封包: [5A ...]`。
-    4.  在 Master 終端機輸入 `status`。
-        *   **預期結果**：Master 會依序切換位址至 `0x4A` 取得 LED 狀態，再切換至 `0x4B` 取得 TSN 溫度，最後還原至 `0x4A`，並以一行訊息完整印出兩者狀態。
+    1. 在 Master 終端機輸入 `scan`。
+       * **預期結果**：顯示 `[SCAN] Found device at 0x4A` 與 `[SCAN] Found device at 0x4B`，以及 `[SCAN] Total devices: 2`。
+    2. 掃描後輸入 `status` 或 `tsn`，確認第一次即可成功讀取到 TSN 溫度，且後續 LED 控制皆不受影響。
 
 ---
 
@@ -134,8 +134,8 @@ graph TD
     *   `ring_buffer.h` / `.c`：基礎環形緩衝區實作
     *   `i2c_packet_protocol.h`：自訂 I2C 封包協定結構與 Command ID 定義
     *   `crc8.h` / `.c`：CRC8 校驗計算函式庫
-    *   `i2c_master.h` / `.c`：Master 發送指令、讀取狀態與讀取 TSN 實作
+    *   `i2c_master.h` / `.c`：Master 發送指令、讀取狀態、讀取 TSN 與 I2C 總線掃描 (Probe) 實作
     *   `i2c_slave.h` / `.c`：Slave 1 (LED 控制) 中斷大快取接收、回應狀態與異步列印日誌
-    *   `i2c_slave2.h` / `.c`：Slave 2 (TSN 遙測) 暫存器級別溫度計算與封包回應
+    *   `i2c_slave2.h` / `.c`：Slave 2 (TSN 遙測) 暫存器級別溫度計算、封包回應與掃描同步處理
 *   `I2C_SP/Debug/src/subdir.mk`：專案編譯相依性設定檔
 *   `readme.md`：本說明文件

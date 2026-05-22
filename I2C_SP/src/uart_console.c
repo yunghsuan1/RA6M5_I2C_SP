@@ -152,6 +152,7 @@ void uart_console_process_rx(uart_console_t *p_con, const char *console_name) {
                     uart_console_print(p_con, "  status               - 查詢狀態 (LED / TSN 溫度)\r\n");
                     if (strcmp(console_name, "MASTER") == 0) {
                         uart_console_print(p_con, "  tsn                  - 讀取 MCU 真實內部溫度 (TSN)\r\n");
+                        uart_console_print(p_con, "  scan                 - 掃描 I2C 總線裝置 (0x08 ~ 0x77)\r\n");
                     }
                     uart_console_print(p_con, "==========================\r\n");
                 } 
@@ -196,6 +197,22 @@ void uart_console_process_rx(uart_console_t *p_con, const char *console_name) {
                         }
                     } else {
                         uart_console_print(p_con, "錯誤: tsn 指令僅限 Master 端執行。\r\n");
+                    }
+                }
+                else if (strcmp(cmd, "scan") == 0) {
+                    if (strcmp(console_name, "MASTER") == 0) {
+                        uart_console_print(p_con, "[SCAN] I2C bus scanning...\r\n");
+                        uint8_t count = 0;
+                        for (uint8_t addr = 0x08; addr <= 0x77; addr++) {
+                            fsp_err_t err = i2c_master_probe(addr);
+                            if (FSP_SUCCESS == err) {
+                                uart_console_print(p_con, "[SCAN] Found device at 0x%02X\r\n", addr);
+                                count++;
+                            }
+                        }
+                        uart_console_print(p_con, "[SCAN] Total devices: %d\r\n", count);
+                    } else {
+                        uart_console_print(p_con, "錯誤: scan 指令僅限 Master 端執行。\r\n");
                     }
                 }
                 // 藍燈控制

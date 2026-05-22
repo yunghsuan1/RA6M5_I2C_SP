@@ -87,6 +87,17 @@ void i2c_slave2_process(void) {
 // I2C Slave 2 中斷回呼函式
 void cb_g_i2c_slave2(i2c_slave_callback_args_t *p_args) {
     switch (p_args->event) {
+        case I2C_SLAVE_EVENT_RX_REQUEST: {
+            // 當 Master 進行 scan 探測寫入時，必須讀取資料以維持 FSP 狀態機同步
+            static uint8_t dummy_rx_buf[16];
+            R_IIC_SLAVE_Read(&g_i2c_slave2_ctrl, dummy_rx_buf, sizeof(dummy_rx_buf));
+            break;
+        }
+
+        case I2C_SLAVE_EVENT_RX_COMPLETE: {
+            break;
+        }
+
         case I2C_SLAVE_EVENT_TX_REQUEST: {
             static uint8_t tx_buf[5]; // Header(0x5A) | Temp_Int | Temp_Dec | Reserved(0) | CRC8
             

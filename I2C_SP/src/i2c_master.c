@@ -211,3 +211,42 @@ fsp_err_t i2c_master_read_tsn(float *p_temp) {
 
     return FSP_SUCCESS;
 }
+
+// 探測特定 I2C 位址是否存在從機 (Bus Scanner)
+fsp_err_t i2c_master_probe(uint8_t addr) {
+    fsp_err_t err = R_IIC_MASTER_SlaveAddressSet(&g_i2c_master0_ctrl, addr, I2C_MASTER_ADDR_MODE_7BIT);
+    if (FSP_SUCCESS != err) {
+        return err;
+    }
+
+    g_i2c_master_tx_complete = false;
+    g_i2c_master_err = false;
+
+    // 發送 1 位元組的 Dummy 資料，用於探測是否存在該從機
+    uint8_t dummy_byte = 0;
+    err = R_IIC_MASTER_Write(&g_i2c_master0_ctrl, &dummy_byte, 1, false);
+    if (FSP_SUCCESS != err) {
+        // 發生錯誤，先還原目標位址為預設 Slave 1 位址
+        R_IIC_MASTER_SlaveAddressSet(&g_i2c_master0_ctrl, I2C_SLAVE_ADDR, I2C_MASTER_ADDR_MODE_7BIT);
+        return err;
+    }
+
+    // 忙碌等待中斷回呼，設置 2ms 超時保護
+    uint32_t timeout = 2000;
+    while (!g_i2c_master_tx_complete && !g_i2c_master_err && timeout > 0) {
+        timeout--;
+        R_BSP_SoftwareDelay(1, BSP_DELAY_UNITS_MICROSECONDS);
+    }
+
+    // 務必還原目標位址為預設 Slave 1 位址
+    R_IIC_MASTER_SlaveAddressSet(&g_i2c_master0_ctrl, I2C_SLAVE_ADDR, I2C_MASTER_ADDR_MODE_7BIT);
+
+    if (g_i2c_master_tx_complete) {
+        return FSP_SUCCESS;
+    } else if (g_i2c_master_err) {
+        return FSP_ERR_NOT_FOUND; // 收到 NACK (無此裝置)
+    } else {
+        return FSP_ERR_TIMEOUT;   // 超時 (無回應)
+    }
+}
+
