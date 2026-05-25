@@ -24,13 +24,13 @@
     <node id="board.clock.pll.div" option="board.clock.pll.div.3"/>
     <node id="board.clock.pll.mul" option="board.clock.pll.mul.250"/>
     <node id="board.clock.pll.display" option="board.clock.pll.display.value"/>
-    <node id="board.clock.pll2.source" option="board.clock.pll2.source.disabled"/>
+    <node id="board.clock.pll2.source" option="board.clock.pll2.source.xtal"/>
     <node id="board.clock.pll2.div" option="board.clock.pll2.div.2"/>
     <node id="board.clock.pll2.mul" option="board.clock.pll2.mul.200"/>
     <node id="board.clock.pll2.display" option="board.clock.pll2.display.value"/>
     <node id="board.clock.clock.source" option="board.clock.clock.source.pll"/>
     <node id="board.clock.clkout.source" option="board.clock.clkout.source.disabled"/>
-    <node id="board.clock.uclk.source" option="board.clock.uclk.source.disabled"/>
+    <node id="board.clock.uclk.source" option="board.clock.uclk.source.pll2"/>
     <node id="board.clock.u60ck.source" option="board.clock.u60ck.source.disabled"/>
     <node id="board.clock.octaspiclk.source" option="board.clock.octaspiclk.source.disabled"/>
     <node id="board.clock.canfdclk.source" option="board.clock.canfdclk.source.disabled"/>
@@ -81,6 +81,9 @@
       <configSetting altId="sci8.txd.p105" configurationId="sci8.txd" isUsedByDriver="true" peripheral="SCI8"/>
       <configSetting altId="sci9.rxd.p110" configurationId="sci9.rxd" isUsedByDriver="true" peripheral="SCI9"/>
       <configSetting altId="sci9.txd.p109" configurationId="sci9.txd" isUsedByDriver="true" peripheral="SCI9"/>
+      <configSetting altId="usbfs0.ovrcura.p501" configurationId="usbfs0.ovrcura" isUsedByDriver="true" peripheral="USB_FS0"/>
+      <configSetting altId="usbfs0.vbus.p407" configurationId="usbfs0.vbus" isUsedByDriver="true" peripheral="USB_FS0"/>
+      <configSetting altId="usbfs0.vbusen.p500" configurationId="usbfs0.vbusen" isUsedByDriver="true" peripheral="USB_FS0"/>
     </pincfg>
   </raPinConfiguration>
 </raConfiguration>

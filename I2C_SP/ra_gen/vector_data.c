@@ -24,6 +24,8 @@
             [17] = iic_slave_txi_isr, /* IIC2 TXI (Transmit data empty) */
             [18] = iic_slave_tei_isr, /* IIC2 TEI (Transmit end) */
             [19] = iic_slave_eri_isr, /* IIC2 ERI (Transfer error) */
+            [20] = usbfs_interrupt_handler, /* USBFS INT (USBFS interrupt) */
+            [21] = usbfs_resume_handler, /* USBFS RESUME (USBFS resume interrupt) */
         };
         #if BSP_FEATURE_ICU_HAS_IELSR
         const bsp_interrupt_event_t g_interrupt_event_link_select[BSP_ICU_VECTOR_NUM_ENTRIES] =
@@ -48,6 +50,8 @@
             [17] = BSP_PRV_VECT_ENUM(EVENT_IIC2_TXI,GROUP1), /* IIC2 TXI (Transmit data empty) */
             [18] = BSP_PRV_VECT_ENUM(EVENT_IIC2_TEI,GROUP2), /* IIC2 TEI (Transmit end) */
             [19] = BSP_PRV_VECT_ENUM(EVENT_IIC2_ERI,GROUP3), /* IIC2 ERI (Transfer error) */
+            [20] = BSP_PRV_VECT_ENUM(EVENT_USBFS_INT,GROUP4), /* USBFS INT (USBFS interrupt) */
+            [21] = BSP_PRV_VECT_ENUM(EVENT_USBFS_RESUME,GROUP5), /* USBFS RESUME (USBFS resume interrupt) */
         };
         #endif
         #endif

@@ -1,5 +1,65 @@
 /* generated HAL source file - do not edit */
 #include "hal_data.h"
+usb_instance_ctrl_t g_basic0_ctrl;
+
+#if !defined(g_usb_descriptor)
+extern usb_descriptor_t g_usb_descriptor;
+#endif
+#define RA_NOT_DEFINED (1)
+const usb_cfg_t g_basic0_cfg =
+{ .usb_mode = USB_MODE_PERI,
+  .usb_speed = USB_SPEED_FS,
+  .module_number = 0,
+  .type = USB_CLASS_PHID,
+#if defined(g_usb_descriptor)
+                .p_usb_reg = g_usb_descriptor,
+#else
+  .p_usb_reg = &g_usb_descriptor,
+#endif
+  .usb_complience_cb = NULL,
+#if defined(VECTOR_NUMBER_USBFS_INT)
+                .irq       = VECTOR_NUMBER_USBFS_INT,
+#else
+  .irq = FSP_INVALID_VECTOR,
+#endif
+#if defined(VECTOR_NUMBER_USBFS_RESUME)
+                .irq_r     = VECTOR_NUMBER_USBFS_RESUME,
+#else
+  .irq_r = FSP_INVALID_VECTOR,
+#endif
+  .irq_d0 = FSP_INVALID_VECTOR,
+  .irq_d1 = FSP_INVALID_VECTOR,
+#if defined(VECTOR_NUMBER_USBHS_USB_INT_RESUME)
+                .hsirq     = VECTOR_NUMBER_USBHS_USB_INT_RESUME,
+#else
+  .hsirq = FSP_INVALID_VECTOR,
+#endif
+  .hsirq_d0 = FSP_INVALID_VECTOR,
+  .hsirq_d1 = FSP_INVALID_VECTOR,
+  .ipl = (12),
+  .ipl_r = (12),
+  .ipl_d0 = BSP_IRQ_DISABLED,
+  .ipl_d1 = BSP_IRQ_DISABLED,
+  .hsipl = (BSP_IRQ_DISABLED),
+  .hsipl_d0 = BSP_IRQ_DISABLED,
+  .hsipl_d1 = BSP_IRQ_DISABLED,
+#if (BSP_CFG_RTOS == 0) && defined(USB_CFG_HMSC_USE)
+                .p_usb_apl_callback = NULL,
+#else
+  .p_usb_apl_callback = usb_phid_callback,
+#endif
+#if defined(NULL)
+                .p_context = NULL,
+#else
+  .p_context = (void*) &NULL,
+#endif
+        };
+#undef RA_NOT_DEFINED
+
+/* Instance structure to use this module. */
+const usb_instance_t g_basic0 =
+{ .p_ctrl = &g_basic0_ctrl, .p_cfg = &g_basic0_cfg, .p_api = &g_usb_on_usb, };
+
 iic_slave_instance_ctrl_t g_i2c_slave2_ctrl;
 const iic_slave_extended_cfg_t g_i2c_slave2_extend =
 {

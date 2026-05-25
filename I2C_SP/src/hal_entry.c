@@ -3,6 +3,7 @@
 #include "i2c_master.h"
 #include "i2c_slave.h"
 #include "i2c_slave2.h"
+#include "usb_phid_control.h"
 
 // 宣告系統滴答計數器 (毫秒)
 extern volatile uint32_t g_system_ticks;
@@ -25,6 +26,9 @@ void hal_entry(void)
     i2c_master_init();
     i2c_slave_init();
     i2c_slave2_init();
+
+    // 3.5. 初始化 USB PHID 鍵盤驅動
+    usb_phid_init();
 
     // 4. 在兩個控制台上印出連線成功歡迎詞與說明
     uart_console_print(&g_console_master, "\r\n*** RA6M5 Master Console (UART9) Online ***\r\n");
@@ -51,6 +55,10 @@ void hal_entry(void)
 
         // D. 處理 LED 閃爍與狀態翻轉邏輯
         led_process();
+
+        // D.2. 處理 USB 後台事件與 S1/S2 按鍵輪詢
+        usb_phid_process();
+        key_scan_process();
 
         // E. 驗證發送：每 60000ms (1 分鐘) 發送一次心跳資訊至兩個控制台
         if (g_system_ticks - last_heartbeat_tick >= 60000)

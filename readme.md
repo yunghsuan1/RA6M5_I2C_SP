@@ -6,6 +6,7 @@
 * **LED 控制 (Slave 1 @ 0x4A)**：Master 透過 I2C 指令控制 Slave 1 的三色 LED 狀態（開啟、關閉、閃爍）並查詢其狀態。
 * **TSN 溫度讀取 (Slave 2 @ 0x4B)**：Slave 2 透過暫存器控制MCU的溫度感測器 (TSN)，並計算出溫度。Master 可動態切換位址讀取該溫度。
 * **I2C 總線掃描 (Bus Scanner)**：Master 可掃描 `0x08 ~ 0x77` 的位址，偵測總線上活動的裝置並統計數量。
+* **USB PHID 鍵盤模擬**：透過 USB 埠連接電腦並模擬為標準鍵盤，在按下 S1 (P005) 或 S2 (P004) 實體按鍵時自動輸入對應的字串。
 * **雙埠序列偵錯工具**：提供 Python Tkinter 介面連接 Master 與 Slave 兩端的序列埠。
 
 ---
@@ -47,6 +48,11 @@ graph TD
 ### 3. UART 序列埠
 * **Master (UART9)**：TX = `P109`，RX = `P110`（115200, 8N1）
 * **Slave (UART8)**：TX = `P105`，RX = `P104`（115200, 8N1，Slave 1 與 Slave 2 共用）
+
+### 4. USB 埠與實體按鍵 (HID 鍵盤模擬)
+* **USB 介面**：使用開發板的 USB 埠連接電腦進行模擬。
+* **按鍵 S1 (P005)**：按下觸發模擬鍵盤輸入 `"input_s1"`。
+* **按鍵 S2 (P004)**：按下觸發模擬鍵盤輸入 `"input_s2"`。
 
 ---
 
@@ -138,3 +144,5 @@ Slave 1 (0x4A) Register Map Tree:
   * `i2c_master.h` / `.c`：Master 發送指令、讀取狀態與 I2C 總線掃描實作
   * `i2c_slave.h` / `.c`：Slave 1 (LED 控制) 中斷接收、回應狀態與日誌輸出
   * `i2c_slave2.h` / `.c`：Slave 2 (TSN 遙測) 溫度計算、封包回應與掃描同步處理
+  * `usb_phid_control.h` / `.c`：USB PHID 控制與按鍵掃描狀態機
+  * `r_usb_phid_descriptor.c`：USB PHID 鍵盤報告與各級描述子定義

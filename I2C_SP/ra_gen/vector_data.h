@@ -6,7 +6,7 @@
         #endif
 /* Number of interrupts allocated */
 #ifndef VECTOR_DATA_IRQ_COUNT
-#define VECTOR_DATA_IRQ_COUNT    (20)
+#define VECTOR_DATA_IRQ_COUNT    (22)
 #endif
 /* ISR prototypes */
 void sci_uart_rxi_isr(void);
@@ -21,6 +21,8 @@ void iic_slave_rxi_isr(void);
 void iic_slave_txi_isr(void);
 void iic_slave_tei_isr(void);
 void iic_slave_eri_isr(void);
+void usbfs_interrupt_handler(void);
+void usbfs_resume_handler(void);
 
 /* Vector table allocations */
 #define VECTOR_NUMBER_SCI9_RXI ((IRQn_Type) 0) /* SCI9 RXI (Receive data full) */
@@ -63,8 +65,12 @@ void iic_slave_eri_isr(void);
 #define IIC2_TEI_IRQn          ((IRQn_Type) 18) /* IIC2 TEI (Transmit end) */
 #define VECTOR_NUMBER_IIC2_ERI ((IRQn_Type) 19) /* IIC2 ERI (Transfer error) */
 #define IIC2_ERI_IRQn          ((IRQn_Type) 19) /* IIC2 ERI (Transfer error) */
+#define VECTOR_NUMBER_USBFS_INT ((IRQn_Type) 20) /* USBFS INT (USBFS interrupt) */
+#define USBFS_INT_IRQn          ((IRQn_Type) 20) /* USBFS INT (USBFS interrupt) */
+#define VECTOR_NUMBER_USBFS_RESUME ((IRQn_Type) 21) /* USBFS RESUME (USBFS resume interrupt) */
+#define USBFS_RESUME_IRQn          ((IRQn_Type) 21) /* USBFS RESUME (USBFS resume interrupt) */
 /* The number of entries required for the ICU vector table. */
-#define BSP_ICU_VECTOR_NUM_ENTRIES (20)
+#define BSP_ICU_VECTOR_NUM_ENTRIES (22)
 
 #ifdef __cplusplus
         }
