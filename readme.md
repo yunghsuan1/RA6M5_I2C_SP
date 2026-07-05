@@ -1,12 +1,20 @@
-# RA6M5 單板 I2C Master-Slave 雙向通訊 LED 控制與狀態查詢系統
+# RA6M5 單板 I2C Master-Slave LED 控制與狀態查詢
 
-本專案實作於瑞薩 (Renesas) RA6M5 微控制器，在**單塊開發板上**透過硬體迴路 (Loopback)，將 IIC0 (設定為 Master) 與 IIC1 (設定為 Slave) 連接，建立基於自訂封包格式及 CRC8 校驗的安全傳輸協定。
-本系統支援透過串列控制台下達 LED 指令，控制 Slave 端接腳的 LED 狀態（恆亮、熄滅、閃爍），並支援 Master 透過 I2C 主動向 Slave 查詢 LED 燈號的真實狀態。
-專案亦配備了一個專屬的 Python Tkinter 雙埠序列偵錯終端機，可實時觀測 Master 與 Slave 兩端的互動細節。
+這個專案使用瑞薩 (Renesas) RA6M5 微控制器，在**單塊開發板上**透過硬體迴路 (Loopback) 方式，將 IIC0 (Master) 與 IIC1 (Slave) 接起來，練習一組完整的 I2C 主從通訊流程。
+目前可透過串列控制台下達 LED 指令，控制 Slave 端接腳的 LED 狀態（恆亮、熄滅、閃爍），也可以由 Master 透過 I2C 主動向 Slave 查詢 LED 的實際狀態。
+專案另外附了一個用 Python Tkinter 寫的雙埠序列偵錯工具，方便同時觀察 Master 與 Slave 兩端的訊息。
+
+## 為什麼做這個
+
+一開始這個專案的目標很單純：想把 RA6M5 上兩組 IIC 先真正跑起來，不只停在 FSP 設定成功，而是能從指令輸入、封包組裝、資料傳送、錯誤檢查，到 Slave 回應都完整走過一次。
+
+之所以選擇用 LED 當作控制目標，是因為它夠直接，硬體狀態也容易驗證。當 Master 送出指令後，可以同時從三個地方確認結果：Master 端送了什麼、Slave 端收到了什麼，以及板子上的 LED 是否真的改變。後來又補上 `status` 查詢，讓這個專案不只是單向控制，而是能驗證主從之間的雙向資料交換。
+
+做的過程中，也順便把幾個實務上常遇到的問題收進來，例如開路汲極腳位需要外接上拉電阻、I2C 中斷裡不適合直接做 UART 輸出、以及沒有時鐘延展時該怎麼安排 Slave 接收流程。這些內容也是這份 README 想記錄下來的重點。
 
 ---
 
-## 📌 系統接線定義 (Pin Configuration)
+## 接線定義 (Pin Configuration)
 
 為了在單板上實現 Master 到 Slave 的 Loopback 通訊，請按照以下定義進行硬體接線：
 
@@ -20,7 +28,7 @@
 *   **硬體接線方式**：
     *   將 `P400 (SCL0)` 與 `P512 (SCL1)` 對接。
     *   將 `P401 (SDA0)` 與 `P511 (SDA1)` 對接。
-    *   ⚠️ **重要提醒**：由於 RA6M5 的 I2C 腳位工作在開路汲極 (Open-Drain) 模式下，**必須在 SCL 與 SDA 訊號線上外接上拉電阻**（推薦使用 $4.7\text{ k}\Omega$ 上拉至 3.3V），否則訊號無法拉高，通訊會出現逾時或匯流排錯誤。
+    *   ⚠️ **提醒**：RA6M5 的 I2C 腳位工作在開路汲極 (Open-Drain) 模式下，**需要在 SCL 與 SDA 訊號線上外接上拉電阻**（例如 $4.7\text{ k}\Omega$ 上拉至 3.3V），否則訊號無法拉高，通訊可能出現逾時或匯流排錯誤。
 
 ### 2. 實體 LED 輸出 (GPIO)
 由 Slave 端的韌體控制以下接腳，以對應 LED 狀態：
@@ -40,7 +48,7 @@
 
 ---
 
-## 🛠️ 韌體架構與功能 (Firmware Architecture)
+## 韌體架構與功能 (Firmware Architecture)
 
 韌體採用 Bare-metal 架構實作，配合瑞薩 FSP (Flexible Software Package) 驅動層。
 
@@ -63,34 +71,34 @@
 
 3.  **I2C Master 功能 (`i2c_master.c`)**
     *   提供 `i2c_master_send_led_cmd()`，將控制指令打包為封包並發起 `R_IIC_MASTER_Write` 傳送至 Slave。
-    *   提供 `i2c_master_read_status()`，發起 `R_IIC_MASTER_Read` 讀取狀態，並對接收資料進行 CRC8 校驗，確保資料正確性。
+    *   提供 `i2c_master_read_status()`，發起 `R_IIC_MASTER_Read` 讀取狀態，並對接收資料進行 CRC8 校驗。
 
 4.  **I2C Slave 功能 (`i2c_slave.c`)**
     *   **大緩衝區一次性讀取**：由於 FSP 中關閉了時鐘延展 (Clock Stretching) 功能，為避免逐字元讀取速度跟不上 Master 時鐘而造成過載錯誤 (Data Overrun)，Slave 在接收中斷中，以單次大緩衝區讀取整個封包。
-    *   **異步傳送日誌機制**：為確保 I2C 中斷服務函式 (ISR) 的即時性，Slave 發送狀態時，不直接在 ISR 內呼叫 UART 列印，而是拷貝資料至暫存區並置位標記，改在主迴圈 `i2c_slave_process` 異步列印發送結果，保證系統的穩定度。
+    *   **異步傳送日誌機制**：為了避免 I2C 中斷服務函式 (ISR) 被 UART 輸出拖慢，Slave 發送狀態時不直接在 ISR 內列印，而是先拷貝資料到暫存區並置位標記，改在主迴圈 `i2c_slave_process` 裡處理日誌輸出。
 
 ---
 
-## 🖥️ PC 端 GUI 偵錯工具 (UI Monitor)
+## PC 端 GUI 偵錯工具 (UI Monitor)
 
-本專案附帶 PC 端視覺化調試程式 `uart_monitor.py`，基於 Python Tkinter 與 `pyserial` 開發。
+專案附帶一個 PC 端的視覺化調試程式 `uart_monitor.py`，基於 Python Tkinter 與 `pyserial` 開發。
 
 ![GUI 介面執行畫面](photo/comport_tool.png)
 
-*   **雙欄獨立顯示**：左右分欄分別連接 Master (UART9) 與 Slave (UART8)，一目了然觀測雙端互動。
+*   **雙欄獨立顯示**：左右分欄分別連接 Master (UART9) 與 Slave (UART8)，方便同時觀察雙端互動。
 *   **連線指示燈**：紅/綠雙色圓形燈顯示當前 COM 埠的連線狀態。
 *   **動態重整**：一鍵刷新並檢測目前電腦上可用的 COM 埠，支援多種常見鮑率。
 *   **終端控制功能**：
     *   提供「🧹 清除視窗」功能，便於重新觀察特定測試結果。
     *   可選擇是否開啟「自動捲動」。
     *   編碼容錯解碼，防止字元亂碼導致程式崩潰。
-*   **便捷發送**：輸入指令後點選「發送」或按下鍵盤 **Enter** 鍵即可送出。
+*   **指令發送**：輸入指令後點選「發送」或按下鍵盤 **Enter** 鍵即可送出。
 
 ---
 
-## 🚀 開發與驗證順序 (Development & Verification Phases)
+## 開發與驗證順序 (Development & Verification Phases)
 
-專案採用漸進式的開發模式，並於每個關鍵節點進行驗證，確保邏輯的正確與硬體的穩定：
+這個專案是分階段往前推的，每個階段都先做出最小可驗證結果，再往下一步加功能：
 
 ### Phase 1: 基礎配置與外設打通
 *   **實作**：使用 e2 studio 進行引腳配置與代碼生成。設定 UART8、UART9、IIC0 (Master) 及 IIC1 (Slave)。
@@ -109,16 +117,16 @@
 *   **驗證 (無上拉電阻)**：初次測試時遇到 Master 讀寫逾時與 Abort 錯誤。
 *   **驗證 (硬體排除)**：對 SDA/SCL 訊號線加上 4.7K 外接上拉電阻，通訊成功打通。此時在 Master 端輸入 `blue blink`，Master 會封裝為 `5A 02 01 00 02 6E` (CRC 正確) 並透過 I2C 發送。Slave 端成功接收並解析指令，點亮實體板上的藍色 LED 閃爍。
 
-### Phase 5: 雙向狀態查詢與安全日誌輸出 (當前階段)
+### Phase 5: 雙向狀態查詢與日誌輸出 (當前階段)
 *   **實作**：Master 追加 `status` 查詢，發送 I2C Read 指令要求 5 位元組；Slave 中斷監聽到讀取要求，動態讀取三色 LED 狀態打包為回傳封包送回，並由主迴圈異步列印發送日誌。
 *   **驗證**：
     *   在 Master (COM11) 輸入 `status`，Master 透過 I2C 發起讀取。
     *   Slave (COM17) 回傳狀態，並在終端顯示 `[Slave I2C] 成功發送狀態封包...`。
-    *   Master 接收並校驗 CRC8 後，成功在終端解碼顯示：`LED Status (來自 Slave): Blue=BLINK, Green=OFF, Red=OFF`，與實際狀態完全吻合。
+    *   Master 接收並校驗 CRC8 後，在終端解碼顯示：`LED Status (來自 Slave): Blue=BLINK, Green=OFF, Red=OFF`，可和實際 LED 狀態互相對照。
 
 ---
 
-## 📄 檔案目錄結構
+## 檔案目錄結構
 
 *   `uart_monitor.py`：PC 端雙埠串列偵錯 Tkinter 程式
 *   `I2C_SP/src/`：RA6M5 開發板原始碼
